@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BookingCal from "./BookingCal";
 
 export default function Home() {
   return (
@@ -89,9 +90,9 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <section class="">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-          <h1 class="first-letter:mt-20 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <section className="">
+        <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 first-letter:mt-20 md:text-5xl lg:text-6xl dark:text-white">
             Book your next <br />
             <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
               Fitness Experience{" "}
@@ -99,6 +100,7 @@ export default function Home() {
           </h1>
         </div>
       </section>
+      <BookingCal />
     </div>
   );
 }
