@@ -16,13 +16,17 @@ export default function Home() {
               <span className="font-bold text-purple-500">/</span>{" "}
               <span className="font-semibold text-stone-950">9FRIENDS</span>
             </span>
-          </a>
+          </a>{" "}
           <div className="flex md:order-2">
+            {" "}
             <button
               type="button"
-              className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-purple-400 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+              className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
             >
-              Sign Up
+              Sign Up{" "}
+              <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+                Coming
+              </span>
             </button>
             <button
               data-collapse-toggle="navbar-cta"
@@ -61,17 +65,18 @@ export default function Home() {
                 >
                   Home
                 </a>
-              </li>
+              </li>{" "}
               <li>
+                {" "}
                 <span
                   href="#"
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   About{" "}
                   <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
-                    Soon
-                  </span>
-                </span>
+                    Coming
+                  </span>{" "}
+                </span>{" "}
               </li>
               {/* <li>
                 <a
@@ -88,11 +93,12 @@ export default function Home() {
                 >
                   Contact{" "}
                 </a>
-              </li>*/}
-            </ul>
-          </div>
+              </li>*/}{" "}
+            </ul>{" "}
+          </div>{" "}
         </div>
       </nav>
+
       <section className="">
         <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-8 lg:px-8">
           <h1 className="mb-0 text-4xl font-extrabold leading-none tracking-tight text-gray-900 first-letter:mt-20 md:text-5xl lg:text-6xl dark:text-white">
@@ -126,7 +132,7 @@ export default function Home() {
           <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023 <span className="font-bold text-purple-300">/</span>
-              9FRIENDS by &nbsp;
+              9FRIENDS by&nbsp;
               <a
                 href="https://jessekhala.com/"
                 class="underline hover:text-purple-600"
