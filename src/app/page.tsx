@@ -24,7 +24,7 @@ export default function Home() {
               className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
             >
               Sign Up{" "}
-              <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
                 Coming
               </span>
             </button>
@@ -59,7 +59,7 @@ export default function Home() {
             <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-100 dark:border-gray-700">
               <li>
                 <a
-                  href="#"
+                  href="/home"
                   className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 md:dark:text-purple-500"
                   aria-current="page"
                 >
@@ -68,15 +68,15 @@ export default function Home() {
               </li>{" "}
               <li>
                 {" "}
-                <span
-                  href="#"
+                <a
+                  href="/about"
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   About{" "}
-                  <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+                  <span className="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
                     Coming
                   </span>{" "}
-                </span>{" "}
+                </a>{" "}
               </li>
               {/* <li>
                 <a
@@ -106,7 +106,7 @@ export default function Home() {
             <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
               Fitness Experience{" "}
             </span>
-            <div class="flex justify-center">
+            <div className="flex justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -127,15 +127,15 @@ export default function Home() {
       </section>
       <BookingCal />
       <br />
-      <footer class="bg-white dark:bg-gray-900">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-          <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <footer className="bg-white dark:bg-gray-900">
+        <div className="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023 <span className="font-bold text-purple-300">/</span>
               9FRIENDS by&nbsp;
               <a
                 href="https://jessekhala.com/"
-                class="underline hover:text-purple-600"
+                className="underline hover:text-purple-600"
               >
                 Jesse Khala
               </a>
