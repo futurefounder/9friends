@@ -1,9 +1,13 @@
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import BookingCal from "./BookingCal";
 
-export default function Home() {
+export default function Home({ Component, pageProps }: AppProps) {
   return (
     <div>
+      <Component {...pageProps} />
+      <Analytics />
       <nav className="bg-white border-gray-200 dark:bg-gray-100">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <a href="#" className="flex items-center">
