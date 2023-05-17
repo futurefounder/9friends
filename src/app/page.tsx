@@ -1,13 +1,9 @@
-import type { AppProps } from "next/app";
-import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import BookingCal from "./BookingCal";
 
-export default function Home({ Component, pageProps }: AppProps) {
+export default function Home() {
   return (
     <div>
-      <Component {...pageProps} />
-      <Analytics />
       <nav className="bg-white border-gray-200 dark:bg-gray-100">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <a href="#" className="flex items-center">
@@ -108,7 +104,7 @@ export default function Home({ Component, pageProps }: AppProps) {
           <h1 className="mb-0 text-4xl font-extrabold leading-none tracking-tight text-gray-900 first-letter:mt-20 md:text-5xl lg:text-6xl dark:text-white">
             Book your next <br />
             <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
-              Fitness Experience{" "}
+              Yoga Experience{" "}
             </span>
             <div className="flex justify-center">
               <svg
@@ -130,6 +126,7 @@ export default function Home({ Component, pageProps }: AppProps) {
         </div>
       </section>
       <BookingCal />
+
       <br />
       <footer className="bg-white dark:bg-gray-900">
         <div className="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
