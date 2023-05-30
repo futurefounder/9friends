@@ -17,7 +17,7 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await submit({ message, name, email });
     setSubmitted(true);
