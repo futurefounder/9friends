@@ -7,8 +7,8 @@ const Benefits = () => {
           <span className="relative inline-block">
             <span className="relative"></span>
           </span>{" "}
-          <span className=""></span> Small Groups, Big Connections: Unleash Your
-          Yoga Journey.
+          <span className=""></span> Small Groups, <br /> Big Connections:{" "}
+          <br /> Unleash Your Yoga Journey.
         </h2>
         <p className="text-base text-gray-700 md:text-lg">
           Experience the beauty of small group yoga classes, fostering a sense

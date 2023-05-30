@@ -86,7 +86,8 @@ export default function FAQ() {
         <div className="space-y-4 text-left">
           <Item title="What Yoga styles are offered in the class?">
             The Yoga classes are a mix of a variety of styles, including Hatha,
-            Vinyasa, and Ashtanga elements.
+            Vinyasa, and Ashtanga elements. There might also be short Pranayama
+            (breathing exercises) elements in the classes.
           </Item>
           <Item title="Can I join the classes as a beginner?">
             Absolutely! The yoga classes are open to practitioners of all
