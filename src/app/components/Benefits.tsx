@@ -105,12 +105,13 @@ const Benefits = () => {
             </div>
             <div>
               <h6 className="mb-2 font-semibold leading-5">
-                Tailored Guidance for Growth
+                Tailored Growth Guidance
               </h6>
               <p className="text-sm text-gray-900">
                 Experience the benefits of small group settings, personalized
                 attention and modifications for individual needs, empowering
-                your practice.
+                your practice. Additional information regarding yogic philosophy
+                and the sequences of the class are provided after each session.
               </p>
             </div>
           </div>

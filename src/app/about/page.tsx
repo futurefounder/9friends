@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -20,10 +21,12 @@ export default function About() {
             </p>
           </div>
           <div className="mb-4 transition-shadow duration-300 hover:shadow-xl lg:mb-6">
-            <img
+            <Image
+              width={1260}
+              height={750}
               className="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
-              src="https://images.pexels.com/photos/3822091/pexels-photo-3822091.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt=""
+              src="/images/small_group_yoga.jpg"
+              alt="Small group doing yoga"
             />
           </div>
           <p className="max-w-xl mb-4 text-base text-gray-700 sm:mx-auto">

@@ -47,7 +47,7 @@ const Item: React.FC<ItemProps> = ({ title, children }) => {
 
 export default function FAQ() {
   return (
-    <div className="px-4 py-16 text-center mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12 ">
+    <div className="px-4 py-16 mx-auto text-center sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12 ">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           <div></div>
@@ -101,10 +101,18 @@ export default function FAQ() {
             </a>{" "}
             (Google Link), a calm space located in Friedrichshain, Berlin.
           </Item>
-          {/* <Item title="How much money you got on you?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
-          </Item> */}
+          <Item title="How much do the classes cost?">
+            From June/23 the classes are donation based. Here&apos;s a guideline{" "}
+            <br /> <br />
+            🌱 5€ - Cost for room covered <br />
+            🌳 Over 5€ - Money will go towards budget for mats & equipment.{" "}
+            <br /> <br />I am working on getting Urban Sports Club / Classpass
+            approved and will add them as soon as possible. <br />
+            <br /> If you are in a difficult financial situation and would still
+            like to join, write me an email to hello@my9friends.com and we will
+            find a solution 😊
+            <br /> - Jesse
+          </Item>
         </div>
       </div>
     </div>
