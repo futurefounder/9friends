@@ -8,7 +8,7 @@ export default function BookingCal() {
     (async function () {
       const cal = await getCalApi();
       cal("ui", {
-        theme: "light",
+        // theme: "light",
         styles: { branding: { brandColor: "#000000" } },
         hideEventTypeDetails: false,
       });
@@ -16,7 +16,7 @@ export default function BookingCal() {
   }, []);
   return (
     <Cal
-      calLink="hi-jesse/9friends-yoga"
+      calLink="hi-jesse/9friends-yoga-fhain"
       style={{ width: "100%", height: "100%", overflow: "scroll" }}
     />
   );

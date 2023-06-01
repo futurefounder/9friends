@@ -1,10 +1,22 @@
+"use client";
 import Link from "next/link";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export default function Navigation() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        styles: { branding: { brandColor: "#000000" } },
+        hideEventTypeDetails: false,
+      });
+    })();
+  }, []);
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-100">
+    <nav className="sticky top-0 z-50 h-16 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" passHref>
           {/* <img
         src="#"
         className="h-8 mr-3"
@@ -20,11 +32,12 @@ export default function Navigation() {
           <button
             type="button"
             className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+            data-cal-link="hi-jesse/9friends-yoga-fhain"
           >
-            Sign Up{" "}
-            <span className="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+            Book Now{" "}
+            {/* <span className="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
               Coming
-            </span>
+            </span> */}
           </button>
           <button
             data-collapse-toggle="navbar-cta"
@@ -54,12 +67,12 @@ export default function Navigation() {
           id="navbar-cta"
         >
           {/* Navigation Elements */}
-          <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-100 dark:border-gray-700">
+          <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-100 dark:border-gray-700">
             <li>
               <Link
                 href="/"
                 className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 md:dark:text-purple-500"
-                aria-current="page"
+                // aria-current="page"
               >
                 Home
               </Link>

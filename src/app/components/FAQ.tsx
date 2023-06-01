@@ -85,9 +85,9 @@ export default function FAQ() {
         </div>
         <div className="space-y-4 text-left">
           <Item title="What Yoga styles are offered in the class?">
-            The Yoga classes are a mix of a variety of styles, including Hatha,
-            Vinyasa, and Ashtanga elements. There might also be short Pranayama
-            (breathing exercises) elements in the classes.
+            The classes are a Mixed Flow with a variety of styles, including
+            Hatha, Vinyasa, and Ashtanga elements. There might also be short
+            Pranayama (breathing exercises) elements in the classes.
           </Item>
           <Item title="Can I join the classes as a beginner?">
             Absolutely! The yoga classes are open to practitioners of all
@@ -103,12 +103,14 @@ export default function FAQ() {
             (Google Link), a calm space located in Friedrichshain, Berlin.
           </Item>
           <Item title="How much do the classes cost?">
-            From June/23 the classes are donation based. Here&apos;s a guideline{" "}
-            <br /> <br />
+            The classes are donation based and you can donate what you want.{" "}
+            <br />
+            Here&apos;s an orientation <br /> <br />
             🌱 5€ - Cost for room covered <br />
-            🌳 Over 5€ - Money will go towards budget for mats & equipment.{" "}
-            <br /> <br />I am working on getting Urban Sports Club / Classpass
-            approved and will add them as soon as possible. <br />
+            🌳 Over 5€ - Money will go towards budget for mats, equipment and my
+            time investment. <br /> <br />I am working on getting Urban Sports
+            Club / Classpass approved and will add them as soon as possible.{" "}
+            <br />
             <br /> If you are in a difficult financial situation and would still
             like to join, write me an email to hello@my9friends.com and we will
             find a solution 😊

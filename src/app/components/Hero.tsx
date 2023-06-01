@@ -7,7 +7,7 @@ const Hero = () => {
           <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
             Yoga Experience{" "}
           </span>
-          <div className="flex justify-center">
+          <div className="z-0 flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

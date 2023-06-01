@@ -24,6 +24,7 @@ function Contact() {
     setShowModal(true);
     // alert("Form submitted");
   };
+
   // Disable form fields if already submitted
   const disableFields = submitted ? "opacity-70 cursor-not-allowed" : "";
   return (
@@ -32,14 +33,24 @@ function Contact() {
       {showModal && ( // Render the modal if showModal is true
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="p-6 bg-white rounded-lg shadow-lg w-80">
-            <p className="mb-4 text-4xl text-center">🎉 Thank you! </p>
-            <p className="mb-4 text-sm text-center">
+            {/* <p className="mb-4 text-4xl text-center">🎉 Thank you! </p> */}
+            <iframe
+              src="https://giphy.com/embed/m2WQBH7DhSdgLfnTUi"
+              width="280"
+              height="280"
+              frameBorder="0"
+              class="giphy-embed"
+              allowFullScreen
+            ></iframe>
+            <p></p>
+            <p className="mb-4 text-center text-l">
               {" "}
-              I recieved your submission 🙏🏾 <br /> <br /> I will get back yo you
-              as soon as possible! <br />- Jesse{" "}
+              <br />
+              I recieved your message 🙏🏾😊 <br /> I will get back yo you as soon
+              as possible! <br /> <br />- Jesse{" "}
             </p>
 
-            <p className="text-center">
+            <p className="font-bold text-center">
               <Link href="/">↩️ Go back to the main site</Link>
             </p>
           </div>
@@ -150,9 +161,10 @@ function Contact() {
                 </label>
                 <input
                   type="text"
-                  placeholder="Yogi Doe"
+                  placeholder="Yogi Om"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required
                   className={`${
                     disableFields
                       ? "bg-gray-300 block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -168,10 +180,11 @@ function Contact() {
                   Email address
                 </label>
                 <input
+                  required
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="yogi@doe.com"
+                  placeholder="yogi@om.com"
                   className={`${
                     disableFields
                       ? "bg-gray-300 block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -195,8 +208,9 @@ function Contact() {
                     : "block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 } ${disableFields}`}
                 disabled={submitted}
-                placeholder="I would like to know"
+                placeholder="Your message..."
                 value={message}
+                required
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
