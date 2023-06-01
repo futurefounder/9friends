@@ -39,7 +39,7 @@ function Contact() {
               width="280"
               height="280"
               frameBorder="0"
-              class="giphy-embed"
+              className="giphy-embed"
               allowFullScreen
             ></iframe>
             <p></p>
