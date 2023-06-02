@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   useEffect(() => {
@@ -13,11 +14,12 @@ export default function Navigation() {
       });
     })();
   }, []);
+  const pathname = usePathname();
   return (
     <nav className="sticky top-0 z-50 h-16 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <Link href="/" className="flex items-center" passHref>
-          {/* <img
+          {/* In case logo image needed <img
         src="#"
         className="h-8 mr-3"
         alt="Logo"
@@ -27,6 +29,7 @@ export default function Navigation() {
             <span className="font-semibold text-stone-950">9FRIENDS</span>
           </span>
         </Link>{" "}
+        {/* console.log(href); */}
         <div className="flex md:order-2">
           {" "}
           <button
@@ -35,9 +38,6 @@ export default function Navigation() {
             data-cal-link="hi-jesse/9friends-yoga-fhain"
           >
             Book Now{" "}
-            {/* <span className="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
-              Coming
-            </span> */}
           </button>
           <button
             data-collapse-toggle="navbar-cta"
@@ -69,19 +69,27 @@ export default function Navigation() {
           {/* Navigation Elements */}
           <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-100 dark:border-gray-700">
             <li>
+              {" "}
               <Link
                 href="/"
-                className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 md:dark:text-purple-500"
-                // aria-current="page"
+                className={
+                  pathname == "/"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : " block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
               >
-                Home
-              </Link>
-            </li>{" "}
+                Home{" "}
+              </Link>{" "}
+            </li>
             <li>
               {" "}
               <Link
                 href="/about"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  pathname == "/about"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : " block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
               >
                 About{" "}
               </Link>{" "}
@@ -95,12 +103,16 @@ export default function Navigation() {
           </a>
         </li> */}
             <li>
-              <a
+              <Link
                 href="/contact"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  pathname == "/contact"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : " block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
               >
                 Contact{" "}
-              </a>
+              </Link>
             </li>{" "}
           </ul>{" "}
         </div>{" "}

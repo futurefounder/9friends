@@ -6,10 +6,6 @@ import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
 import FAQ from "./components/FAQ";
 import React from "react";
-
-// import Lottie from "lottie-react";
-// import Yoga from "./lottie/53880-yoga";
-
 import Link from "next/link";
 
 export default function Home() {
@@ -20,7 +16,6 @@ export default function Home() {
       <BookingCal />
       <Benefits />
       <FAQ />
-      {/* <Lottie animationData={Yoga} loop={true} /> */}
       <Footer />
     </div>
   );

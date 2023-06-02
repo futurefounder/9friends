@@ -107,7 +107,7 @@ export default function FAQ() {
             <br />
             Here&apos;s an orientation <br /> <br />
             🌱 5€ - Cost for room covered <br />
-            🌳 Over 5€ - Money will go towards budget for mats, equipment and my
+            🌳 10€ - Money will go towards budget for mats, equipment and my
             time investment. <br /> <br />I am working on getting Urban Sports
             Club / Classpass approved and will add them as soon as possible.{" "}
             <br />
