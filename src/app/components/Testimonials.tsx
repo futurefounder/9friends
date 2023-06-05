@@ -1,20 +1,22 @@
 "use client";
 import Image from "next/image";
 
-import React, { useEffect } from "react";
-import { Swiper } from "swiper";
+import React, { useState, useEffect } from "react";
+import Swipercore, { Swiper, Navigation, Pagination, Scrollbar } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import styles from "./slider.module.scss";
+// import styles from "./slider.module.scss";
 
 export default function Testimonials() {
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
-      loop: true,
+      modules: [Navigation, Pagination, Scrollbar],
+      speed: 500,
+      // loop: true,
       slidesPerView: 1,
       spaceBetween: 32,
       autoplay: {
@@ -30,6 +32,9 @@ export default function Testimonials() {
           slidesPerView: 1.5,
         },
       },
+      observer: true,
+      observeParents: true,
+      parallax: true,
       navigation: {
         nextEl: ".next-button",
         prevEl: ".prev-button",
@@ -151,20 +156,28 @@ export default function Testimonials() {
 
                         <div className="mt-4">
                           <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
-                            Goodbye Office-Stress
+                            Impressive, Professional, Satisfying{" "}
                           </p>
 
                           <p className="mt-4 leading-relaxed text-gray-500">
-                            Already after the first session with Jesse I noticed
-                            a significant relaxation in my neck muscles which
-                            often suffer from the stress of everyday office
-                            life.
+                            Jesse&apos;s yoga class really impressed me. His
+                            professional approach and empathetic nature have
+                            allowed me to progress in my yoga training while
+                            finding inner peace. I am very satisfied and can
+                            only recommend the course!
                           </p>
                         </div>
                       </div>
-
+                      <br />
+                      <Image
+                        alt="julian"
+                        src="/images/julian.jpg"
+                        width={80}
+                        height={80}
+                        className="object-cover w-16 h-16 rounded-full"
+                      />
                       <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Nury
+                        &mdash; Julian
                       </footer>
                     </blockquote>
                   </div>
@@ -237,6 +250,8 @@ export default function Testimonials() {
                       <Image
                         alt="Dog"
                         src="/images/jakob.jpg"
+                        width={80}
+                        height={80}
                         className="object-cover w-16 h-16 rounded-full"
                       />
                       <footer className="mt-8 text-sm text-gray-500">
@@ -297,21 +312,19 @@ export default function Testimonials() {
 
                         <div className="mt-4">
                           <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
-                            Impressive, Professional, Satisfying.{" "}
+                            Goodbye Office-Stress{" "}
                           </p>
 
                           <p className="mt-4 leading-relaxed text-gray-500">
-                            Jesse&apos;s yoga class really impressed me. His
-                            professional approach and empathetic nature have
-                            allowed me to progress in my yoga training while
-                            finding inner peace. I am very satisfied and can
-                            only recommend the course!
+                            Already after the first session with Jesse I noticed
+                            a significant relaxation in my neck muscles which
+                            often suffer from the stress of everyday office
+                            life.
                           </p>
                         </div>
-                      </div>
-
+                      </div>{" "}
                       <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Julian
+                        &mdash; Nury
                       </footer>
                     </blockquote>
                   </div>
