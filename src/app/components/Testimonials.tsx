@@ -151,7 +151,7 @@ export default function Testimonials() {
 
                         <div className="mt-4">
                           <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
-                            Goobye Office-Stress
+                            Goodbye Office-Stress
                           </p>
 
                           <p className="mt-4 leading-relaxed text-gray-500">
