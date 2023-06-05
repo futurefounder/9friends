@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 const Benefits = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -72,9 +73,9 @@ const Benefits = () => {
                 Connect and Thrive Together
               </h6>
               <p className="text-sm text-gray-900">
-                Join a supportive yoga community, foster meaningful connections,
-                and embark on a transformative journey alongside like-minded
-                individuals, creating a sense of belonging and personal growth.
+                Join our yoga community, foster connections, and embark on a
+                transformative journey. Reflect over tea after class, nurturing
+                personal growth and a sense of belonging.
               </p>
               <hr className="w-full my-6 border-gray-300" />
             </div>
@@ -108,28 +109,29 @@ const Benefits = () => {
                 Tailored Growth Guidance
               </h6>
               <p className="text-sm text-gray-900">
-                Experience the benefits of small group settings, personalized
-                attention and modifications for individual needs, empowering
-                your practice. Additional information regarding yogic philosophy
-                and the sequences of the class are provided after each session.
+                Deepen your practice with personalized attention and
+                modifications in a small group setting, empowering your yoga
+                journey. Receive valuable insights into yogic philosophy and
+                class sequences after each session to further enhance your
+                exploration and growth.
               </p>
             </div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-5">
           <img
-            className="object-cover w-full h-56 col-span-2 rounded shadow-lg"
+            className="object-cover w-full h-46 col-span-2 rounded shadow-lg"
+            src="https://images.pexels.com/photos/8436634/pexels-photo-8436634.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            alt=""
+          />
+          <img
+            className="object-cover w-full h-48 rounded shadow-lg"
             src="https://images.pexels.com/photos/8436637/pexels-photo-8436637.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
           />
           <img
             className="object-cover w-full h-48 rounded shadow-lg"
-            src="https://images.pexels.com/photos/8436681/pexels-photo-8436681.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <img
-            className="object-cover w-full h-48 rounded shadow-lg"
-            src="https://images.pexels.com/photos/8436634/pexels-photo-8436634.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            src="https://images.pexels.com/photos/9159424/pexels-photo-9159424.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
           />
         </div>

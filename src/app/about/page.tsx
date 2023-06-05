@@ -40,29 +40,56 @@ export default function About() {
             joy of being part of our vibrant little group ✨
           </p>
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-            <span className="relative inline-block"></span> Hi, I&apos;m Jesse
+            <span className="relative inline-block">Hi, I&apos;m Jesse</span>
           </h2>
-
+          <Image
+            width={1260}
+            height={750}
+            className="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
+            src="/images/ceremony-jesse.jpg"
+            alt="Jesse at ceremony"
+          />{" "}
+          <br />
           <p className="max-w-xl mb-4 text-base text-gray-700 sm:mx-auto">
             I am Jesse, a passionate yogi and movement enthusiast. <br />
-            From my early days of football and `&quot;aggressive`&quot; inline
-            skating as a teenager to over 10 years as a professional
-            breakdancer, movement has always been an integral part of my life.{" "}
-            <br /> <br /> I discovered Yoga for myself in 2015, but it was in
-            during transformative yoga classes on a beach in Fuerteventura in
-            2021 that I discovered the profound connection between physical
-            postures, meditation, and spirituality. Since then, my yoga journey
-            has unfolded into a deep and diverse exploration, extending beyond
-            the physical benefits I initially sought. <br /> <br /> Seeking
-            further knowledge, I delved into yoga philosophy and embarked on a
-            transformative trip to India, where I completed a 200-hour Yoga
-            Teacher Training in Rishikesh. <br />
+            From my early days of football, skating and eSports as a teenager to
+            over 10 years as a professional breakdancer, movement has always
+            been an integral part of my life. <br /> <br /> After initially
+            discovering Yoga in 2015 and practicing on and off for a few years,
+            it was during my transformative experience on the beaches of
+            Fuerteventura in 2021 that I truly immersed myself in the profound
+            connection between physical postures, meditation, and spirituality.
+            This awakening ignited a deep passion within me and propelled my
+            yoga journey into a new realm of exploration, expansion, and
+            personal growth. <br />
+            <br /> Seeking to deepen my understanding and learning about the
+            history and mechanics of the transformative power of yoga, I
+            embarked on a pilgrimage to India in April 2023, where I completed a
+            rigorous 200-hour Yoga Teacher Training in the sacred city of
+            Rishikesh. Since then, I have been dedicated to guiding others on
+            their own transformative path, helping them discover the immense
+            benefits of yoga beyond the physical aspects.
             <br />
+            <br />
+            In addition to my yoga journey, I have also pursued other fitness
+            disciplines. In 2017 I completed a HIIT Instructor training for a
+            new workout format that combines music with exercises and I have had
+            the opportunity to work as a Freelance HIIT Instructor for various
+            Gyms and companies in Berlin besides my main job. <br />
+            <br /> Combining my passion for yoga and movement in general, I
+            strive to offer a well-rounded approach to physical health and
+            wellness, empowering individuals to cultivate strength, flexibility,
+            mindfulness, and overall well-being. <br /> <br />
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+              <span className="relative inline-block">
+                Unite & Thrive in Small Group Yoga Experiences
+              </span>
+            </h2>
             <Image
               width={1260}
               height={750}
               className="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
-              src="/images/ceremony-jesse.jpg"
+              src="https://images.pexels.com/photos/8436719/pexels-photo-8436719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="Jesse at ceremony"
             />{" "}
             <br />
@@ -74,15 +101,19 @@ export default function About() {
             <br /> Join me on the mat as we cultivate strength, flexibility, and
             inner peace through mindfulness, movement, breathwork, and
             meditation. <br />
-            <br /> Let&apos;s embark on a yogic journey together, creating a
-            space where mind, body, and spirit can harmoniously unite! <br />
+            <br />{" "}
+            <span className="font-bold">
+              {" "}
+              Let&apos;s embark on a yogic journey together, creating a space
+              where mind, body, and spirit can harmoniously unite! <br />
+            </span>
             <br />
             <span className="italic">
               {" "}
               P.S. <br />I wrote a more detailed version of my sports background
               on my <br />
               <a className="underline" href="https://jessekhala.com/sports/">
-                personal website.
+                personal website
               </a>
             </span>
           </p>
