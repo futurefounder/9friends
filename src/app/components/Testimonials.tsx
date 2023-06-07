@@ -103,9 +103,91 @@ export default function Testimonials() {
 
             <div className="-mx-6 lg:col-span-2 lg:mx-0">
               <div className="swiper-container !overflow-hidden">
-                <div className="swiper-wrapper">
+                <div className="swiper-wrapper ">
                   <div className="swiper-slide">
-                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white">
+                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
+                      <div>
+                        <div className="flex gap-0.5 text-green-500">
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        </div>
+
+                        <div className="mt-4">
+                          <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
+                            Empowering, Serene, Connected{" "}
+                          </p>
+
+                          <p className="mt-4 leading-relaxed text-gray-500">
+                            I am loving these classes! With such a nurturing
+                            guidance, Jesse created a{" "}
+                            <span className="font-bold">
+                              {" "}
+                              deep sense of serenity and empowerment
+                            </span>
+                            , encouraging each of us to explore our unique
+                            journey on the mat. I felt deeply connected to my
+                            body and inspired to continue my yoga practice.
+                          </p>
+                        </div>
+                      </div>
+                      <br />
+                      <Image
+                        alt="maria"
+                        src="/images/maria.jpg"
+                        width={80}
+                        height={80}
+                        className="object-cover w-16 h-16 rounded-full"
+                      />
+                      <footer className="mt-8 text-sm text-gray-500">
+                        &mdash; Maria
+                      </footer>
+                    </blockquote>
+                  </div>
+
+                  <div className="swiper-slide">
+                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
                         <div className="flex gap-0.5 text-green-500">
                           <svg
@@ -162,9 +244,13 @@ export default function Testimonials() {
                           <p className="mt-4 leading-relaxed text-gray-500">
                             Jesse&apos;s yoga class really impressed me. His
                             professional approach and empathetic nature have
-                            allowed me to progress in my yoga training while
-                            finding inner peace. I am very satisfied and can
-                            only recommend the course!
+                            <span className="font-bold">
+                              {" "}
+                              allowed me to progress in my yoga training while
+                              finding inner peace.{" "}
+                            </span>{" "}
+                            I am very satisfied and can only recommend the
+                            classes!
                           </p>
                         </div>
                       </div>
@@ -182,7 +268,7 @@ export default function Testimonials() {
                     </blockquote>
                   </div>
 
-                  <div className="swiper-slide">
+                  <div className="swiper-slide bg-slate-400">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white">
                       <div>
                         <div className="flex gap-0.5 text-green-500">
@@ -239,10 +325,14 @@ export default function Testimonials() {
 
                           <p className="mt-4 leading-relaxed text-gray-500">
                             I have tried several yoga classes but Jesse&apos;s
-                            approach is by far the best for me. The perfect
-                            balance of workout, meditation and breathing
-                            exercises. After each session I feel extremely
-                            relaxed and full of energy.
+                            approach is by far the best for me.{" "}
+                            <span className="font-bold">
+                              {" "}
+                              The perfect balance of workout, meditation and
+                              breathing exercises.{" "}
+                            </span>
+                            After each session I feel extremely relaxed and full
+                            of energy.
                           </p>
                         </div>
                       </div>{" "}
@@ -317,9 +407,13 @@ export default function Testimonials() {
 
                           <p className="mt-4 leading-relaxed text-gray-500">
                             Already after the first session with Jesse I noticed
-                            a significant relaxation in my neck muscles which
-                            often suffer from the stress of everyday office
-                            life.
+                            a{" "}
+                            <span className="font-bold">
+                              {" "}
+                              significant relaxation{" "}
+                            </span>
+                            in my neck muscles which often suffer from the
+                            stress of everyday office life.
                           </p>
                         </div>
                       </div>{" "}
