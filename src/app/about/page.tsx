@@ -105,9 +105,10 @@ export default function About() {
             <span className="font-bold">
               {" "}
               Let&apos;s embark on a yogic journey together, creating a space
-              where mind, body, and spirit can harmoniously unite! <br />
-            </span>
-            <br />
+              where mind, body, and spirit can harmoniously unite! <br /> <br />{" "}
+            </span>{" "}
+            Love & light, <br /> Jesse
+            {/* <br />
             <span className="italic">
               {" "}
               P.S. <br />I wrote a more detailed version of my sports background
@@ -115,7 +116,7 @@ export default function About() {
               <a className="underline" href="https://jessekhala.com/sports/">
                 personal website
               </a>
-            </span>
+            </span> */}
           </p>
         </div>
       </div>

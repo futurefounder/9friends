@@ -3,7 +3,12 @@ const Hero = () => {
     <section className="">
       <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-8 lg:px-8">
         <h1 className="mb-0 text-4xl font-extrabold leading-none tracking-tight text-gray-900 first-letter:mt-20 md:text-5xl lg:text-6xl dark:text-white">
-          Book your next <br />
+          Book Your
+          <br />{" "}
+          {/* <span class="bg-gradient-to-r italic from-green-300 via-blue-500 to-purple-600 bg-[length:100%_1px] bg-no-repeat bg-bottom">
+          </span>  */}
+          <span className="italic"> Small Group</span>
+          <br />{" "}
           <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
             Yoga Experience{" "}
           </span>
