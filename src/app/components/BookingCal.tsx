@@ -15,9 +15,11 @@ export default function BookingCal() {
     })();
   }, []);
   return (
-    <Cal
-      calLink="hi-jesse/9friends-yoga-fhain"
-      style={{ width: "100%", height: "100%", overflow: "scroll" }}
-    />
+    <div>
+      <Cal
+        calLink="hi-jesse/9friends-yoga-fhain"
+        style={{ width: "100%", height: "100%", overflow: "scroll" }}
+      />
+    </div>
   );
 }

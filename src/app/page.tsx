@@ -8,13 +8,15 @@ import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import React from "react";
 import Link from "next/link";
+import BookingCards from "./components/BookingCards";
 
 export default function Home() {
   return (
     <div>
       <Navigation />
       <Hero />
-      <BookingCal />
+      <BookingCards />
+      {/* <BookingCal /> */}
       <Benefits />
       <Testimonials />
       <FAQ />

@@ -3,8 +3,12 @@ import Link from "next/link";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Button, Modal } from "flowbite-react";
 
 export default function Navigation() {
+  const [openModal, setOpenModal] = useState<string | undefined>();
+  const props = { openModal, setOpenModal };
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -15,6 +19,7 @@ export default function Navigation() {
     })();
   }, []);
   const pathname = usePathname();
+
   return (
     <nav className="sticky top-0 z-50 h-16 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
@@ -32,13 +37,60 @@ export default function Navigation() {
         {/* console.log(href); */}
         <div className="flex md:order-2">
           {" "}
-          <button
+          <Button
+            onClick={() => props.setOpenModal("default")}
+            className="bg-slate-800 hover:bg-fuchsia-900"
+          >
+            {/* bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 */}
+            Book Now
+          </Button>
+          <Modal
+            show={props.openModal === "default"}
+            size="sm"
+            onClose={() => props.setOpenModal(undefined)}
+          >
+            <Modal.Header></Modal.Header>
+            <Modal.Body>
+              <div className="space-y-6">
+                <p className="text-base text-center leading-relaxed text-gray-500 dark:text-gray-400">
+                  <button
+                    type="button"
+                    className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+                    data-cal-link="hi-jesse/9friends-yoga-xberg"
+                  >
+                    Book Xberg{" "}
+                  </button>
+                </p>
+                <p className="text-base text-center leading-relaxed text-gray-500 dark:text-gray-400">
+                  <button
+                    type="button"
+                    className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+                    data-cal-link="hi-jesse/9friends-yoga-fhain"
+                  >
+                    Book Fhain{" "}
+                  </button>
+                </p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              {/* <Button onClick={() => props.setOpenModal(undefined)}>
+                I accept
+              </Button> */}
+              <Button
+                color="gray"
+                onClick={() => props.setOpenModal(undefined)}
+              >
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          {/* <button
             type="button"
             className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
             data-cal-link="hi-jesse/9friends-yoga-fhain"
           >
             Book Now{" "}
-          </button>
+          </button> */}
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
