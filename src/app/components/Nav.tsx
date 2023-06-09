@@ -46,7 +46,7 @@ export default function Navigation() {
           </Button>
           <Modal
             show={props.openModal === "default"}
-            size="sm"
+            size="lg"
             onClose={() => props.setOpenModal(undefined)}
           >
             <Modal.Header></Modal.Header>
