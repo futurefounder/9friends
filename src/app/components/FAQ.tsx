@@ -104,16 +104,14 @@ export default function FAQ() {
             (Google Link), a calm space located in Friedrichshain, Berlin.
           </Item>
           <Item title="How much do the classes cost?">
-            The classes are donation based and you can donate what you want.{" "}
+            The classes are currently donation based. <br />
+            <br /> I am working on getting Urban Sports Club / ClassPass
+            approved, this might be available as of July/August 2023. <br />
             <br />
-            Here&apos;s an orientation <br /> <br />
-            🌱 5€ Cost for room covered <br />
-            🌳 10€ + you support your Yoga Teacher <br /> <br />I am working on
-            getting Urban Sports Club / Classpass approved and will add them as
-            soon as possible. <br />
-            <br /> If you are in a difficult financial situation and would still
-            like to join, write me an email to hello@my9friends.com and we will
-            find a solution 😊
+            If you find yourself facing financial challenges but still wish to
+            join, please reach out to me at hello@my9friends.com with a little
+            note, and we will work together to find a solution that allows you
+            to be part of our community. Your well-being matters!😊
           </Item>
           <Item title="My question is not answered, how can I contact you?">
             No problem 😊 just send a message through the{" "}
