@@ -3,6 +3,9 @@ module.exports = {
   content: [
     // "./node_modules/flowbite-react/**/*.js",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./public/**/*.html",
+    "./node_modules/@themesberg/flowbite/*/.js",
   ],
   theme: {
     extend: {

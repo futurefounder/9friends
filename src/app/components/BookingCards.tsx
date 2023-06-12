@@ -53,7 +53,7 @@ export default function BookingCards(params: any) {
                     />
                   </svg>
                 </svg>
-                <h3 className="text-lg font-bold text-gray-900 sm:text-xl ml-2">
+                <h3 className="ml-2 text-lg font-bold text-gray-900 sm:text-xl">
                   Friedrichshain
                 </h3>
               </div>{" "}
@@ -79,7 +79,7 @@ export default function BookingCards(params: any) {
               </svg>
               <span className="ml-2"> Mondays 7.00PM - 8.00PM </span> */}
             Discover the magic of{" "}
-            <span className="font-bold	 ">
+            <span className="font-bold ">
               &apos;&apos;Conscious Kiez&apos;&apos; in Friedrichshain
             </span>
             , a cozy haven where yoga comes alive in an intimate space,
@@ -87,7 +87,7 @@ export default function BookingCards(params: any) {
             {/* </div> */}
           </p>
         </div>
-        <dl className="mt-6 flex gap-4 sm:gap-6">
+        <dl className="flex gap-4 mt-6 sm:gap-6">
           <div className="flex flex-col-reverse">
             <dt className="text-sm font-medium text-gray-600">Jesse</dt>
             <dd className="text-xs text-gray-500">Teacher</dd>
@@ -144,7 +144,7 @@ export default function BookingCards(params: any) {
                     />
                   </svg>
                 </svg>
-                <h3 className="text-lg font-bold text-gray-900 sm:text-xl ml-2">
+                <h3 className="ml-2 text-lg font-bold text-gray-900 sm:text-xl">
                   Kreuzberg
                 </h3>
               </div>{" "}
@@ -179,7 +179,7 @@ export default function BookingCards(params: any) {
             nurturing deep connections.
           </p>
         </div>
-        <dl className="mt-6 flex gap-4 sm:gap-6">
+        <dl className="flex gap-4 mt-6 sm:gap-6">
           <div className="flex flex-col-reverse">
             <dt className="text-sm font-medium text-gray-600">Jesse</dt>
             <dd className="text-xs text-gray-500">Teacher</dd>

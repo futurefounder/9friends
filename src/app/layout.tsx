@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "9Friends - Small Group Fitness Workouts",
-  description: "Small Group Big Impact.",
+  description: "Small Group, Big Impact.",
 };
 
 export default function RootLayout({

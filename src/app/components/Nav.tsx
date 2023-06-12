@@ -3,11 +3,15 @@ import Link from "next/link";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Button, Modal } from "flowbite-react";
+import Head from "next/head";
+import MyModal from "./MyModal";
 
 export default function Navigation() {
-  const [openModal, setOpenModal] = useState<string | undefined>();
-  const props = { openModal, setOpenModal };
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setNavbarOpen(!navbarOpen);
+  };
 
   useEffect(() => {
     (async function () {
@@ -22,6 +26,9 @@ export default function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 h-16 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
+      <Head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js" />
+      </Head>
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <Link href="/" className="flex items-center" passHref>
           {/* In case logo image needed <img
@@ -34,56 +41,8 @@ export default function Navigation() {
             <span className="font-semibold text-stone-950">9FRIENDS</span>
           </span>
         </Link>{" "}
-        {/* console.log(href); */}
         <div className="flex md:order-2">
           {" "}
-          <Button
-            onClick={() => props.setOpenModal("default")}
-            className="bg-slate-800 hover:bg-fuchsia-900"
-          >
-            {/* bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 */}
-            Book Now
-          </Button>
-          <Modal
-            show={props.openModal === "default"}
-            size="lg"
-            onClose={() => props.setOpenModal(undefined)}
-          >
-            <Modal.Header></Modal.Header>
-            <Modal.Body>
-              <div className="space-y-6">
-                <p className="text-base text-center leading-relaxed text-gray-500 dark:text-gray-400">
-                  <button
-                    type="button"
-                    className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-                    data-cal-link="hi-jesse/9friends-yoga-xberg"
-                  >
-                    Book Xberg{" "}
-                  </button>
-                </p>
-                <p className="text-base text-center leading-relaxed text-gray-500 dark:text-gray-400">
-                  <button
-                    type="button"
-                    className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-                    data-cal-link="hi-jesse/9friends-yoga-fhain"
-                  >
-                    Book Fhain{" "}
-                  </button>
-                </p>
-              </div>
-            </Modal.Body>
-            <Modal.Footer>
-              {/* <Button onClick={() => props.setOpenModal(undefined)}>
-                I accept
-              </Button> */}
-              <Button
-                color="gray"
-                onClick={() => props.setOpenModal(undefined)}
-              >
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
           {/* <button
             type="button"
             className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
@@ -91,12 +50,13 @@ export default function Navigation() {
           >
             Book Now{" "}
           </button> */}
+          <MyModal />
           <button
-            data-collapse-toggle="navbar-cta"
+            onClick={toggleNavbar}
             type="button"
             className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-cta"
-            aria-expanded="false"
+            aria-expanded={navbarOpen}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -106,6 +66,7 @@ export default function Navigation() {
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
+              {" "}
               <path
                 fillRule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -115,11 +76,15 @@ export default function Navigation() {
           </button>
         </div>
         <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-          id="navbar-cta"
+          className={`${
+            navbarOpen ? "block" : "hidden"
+          } w-full md:block md:w-auto ${
+            navbarOpen ? "bg-white/95 backdrop-blur mt-2" : ""
+          }`}
+          id="navbar-default"
         >
           {/* Navigation Elements */}
-          <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-100 dark:border-gray-700">
+          <ul className="flex flex-col p-4 mt-4 font-medium text-center border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-100 dark:border-gray-700">
             <li>
               {" "}
               <Link
