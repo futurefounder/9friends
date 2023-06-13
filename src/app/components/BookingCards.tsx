@@ -92,12 +92,12 @@ export default function BookingCards(params: any) {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             className="w-6 w-6 stroke-fuchsia-600"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
             />
           </svg>{" "}
@@ -129,7 +129,7 @@ export default function BookingCards(params: any) {
           Book Fhain{" "}
         </button>
       </div>
-      <a
+      <div
         // href="#"
         className="flex-grow relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8 max-w-[300px]"
       >
@@ -207,12 +207,12 @@ export default function BookingCards(params: any) {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             className="w-6 w-6 stroke-fuchsia-600"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
             />
           </svg>{" "}
@@ -243,7 +243,7 @@ export default function BookingCards(params: any) {
         >
           Book Xberg{" "}
         </button>
-      </a>
+      </div>
     </div>
   );
 }
