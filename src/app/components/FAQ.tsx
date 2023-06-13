@@ -86,9 +86,8 @@ export default function FAQ() {
         </div>
         <div className="space-y-4 text-left">
           <Item title="What Yoga styles are offered in the class?">
-            The classes are a Vinyasa Flow with a variety of styles, including
-            Hatha, Vinyasa, Pranayama (breathing exercises) and Ashtanga
-            elements.
+            The classes are Hatha Vinyasa, meaning we will align body, breath
+            and mind, and also stay a little longer in the postures.
           </Item>
           <Item title="Can I join the classes as a beginner?">
             Absolutely! The yoga classes are open to practitioners of all
@@ -97,10 +96,25 @@ export default function FAQ() {
             ensure a safe and enjoyable practice.
           </Item>
           <Item title="Where are your yoga classes held?">
-            Our yoga classes are conducted at 📍
-            <a href="https://goo.gl/maps/V3dr1jqCmhLtHKun8?coh=178571&entry=tt">
+            Our Friedrichshain Yoga classes are conducted at 📍
+            <Link
+              target="_blank"
+              href="https://www.google.com/maps/dir//CONSCIOUS+KIEZ,+Petersburger+Platz,+Berlin/@52.5213364,13.4084965,13z/data=!3m2!4b1!5s0x47a84e32729fb783:0xa07d3be50504bf21!4m9!4m8!1m0!1m5!1m1!1s0x47a84fa601cd17d9:0x2f39514e9a0b452b!2m2!1d13.4496958!2d52.5212913!3e1?entry=ttu"
+            >
               <span className="font-semibold underline">Conscious Kiez</span>
-            </a>{" "}
+            </Link>{" "}
+            (Google Link), a calm space located in Friedrichshain, Berlin.
+            <br />
+            <br />
+            Our Kreuzberg Yoga classes are conducted at 📍
+            <Link
+              target="_blank"
+              href="https://www.google.com/maps/dir//Iyengar+Yogastudio+Berlin,+Oranienstra%C3%9Fe+163,+10969+Berlin/@52.5025244,13.3863662,14z/data=!3m1!5s0x47a84e32729fb783:0xa07d3be50504bf21!4m18!1m8!3m7!1s0x47a84e326d4fb363:0xdaf3f08c1aea866e!2sIyengar+Yogastudio+Berlin!8m2!3d52.5025238!4d13.4141036!15sChNpeWVuZ2FyIHlvZ2EgYmVybGlukgELeW9nYV9zdHVkaW_gAQA!16s%2Fg%2F1w2yyh1j!4m8!1m0!1m5!1m1!1s0x47a84e326d4fb363:0xdaf3f08c1aea866e!2m2!1d13.4141036!2d52.5025238!3e1?entry=ttu"
+            >
+              <span className="font-semibold underline">
+                Iyengar Yogastudio Berlin Kreuzberg
+              </span>
+            </Link>{" "}
             (Google Link), a calm space located in Friedrichshain, Berlin.
           </Item>
           <Item title="How much do the classes cost?">
