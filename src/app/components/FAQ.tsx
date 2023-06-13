@@ -80,7 +80,8 @@ export default function FAQ() {
             </span>{" "}
           </h2>
           {/* <p class="text-base text-gray-700 md:text-lg ">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            Sed ut perspiciatis unde omnis iste natus error 
+            sit voluptatem
             accusantium doloremque rem aperiam, eaque ipsa quae.
           </p> */}
         </div>
@@ -115,7 +116,7 @@ export default function FAQ() {
                 Iyengar Yogastudio Berlin Kreuzberg
               </span>
             </Link>{" "}
-            (Google Link), a calm space located in Friedrichshain, Berlin.
+            (Google Link), a welcoming space located in Kreuzberg, Berlin.
           </Item>
           <Item title="How much do the classes cost?">
             The classes are currently donation based. <br />
