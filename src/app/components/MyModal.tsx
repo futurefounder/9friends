@@ -17,7 +17,6 @@ export default function MyModal() {
         Book Now
       </Button>
       <Modal
-        scrollable
         size="lg"
         show={props.openModal === "default"}
         onClose={() => props.setOpenModal(undefined)}
