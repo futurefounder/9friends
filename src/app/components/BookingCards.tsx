@@ -197,8 +197,8 @@ export default function BookingCards(params: any) {
               {" "}
               Iyengar Yogastudio Berlin, Oranienstr. 163, in Kreuzberg{" "}
             </span>
-            and immerse yourself in a space that warmly envelops up to 10 souls,
-            nurturing deep connections. <br />
+            and immerse yourself in a space that warmly envelops up to 10 souls.{" "}
+            <br />
             <br />
           </p>
         </div>{" "}
