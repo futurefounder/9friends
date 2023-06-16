@@ -22,7 +22,7 @@ export default function MyModal() {
         size="lg"
         show={props.openModal === "dismissible"}
         onClose={() => props.setOpenModal(undefined)}
-        className="flex items-center justify-center h-screen"
+        className="md:mt-[15%] md:ml-[33%]  md:items-center md:justify-center md:max-lg:flex"
       >
         <Modal.Header>
           <span className="m-4 text-2xl font-semibold"> Book Now </span>{" "}
