@@ -93,7 +93,7 @@ export default function BookingCards(params: any) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
-            className="w-6 w-6 stroke-fuchsia-600"
+            className="w-6 stroke-fuchsia-600"
           >
             <path
               strokeLinecap="round"
@@ -112,7 +112,7 @@ export default function BookingCards(params: any) {
         <dl className="flex gap-4 mt-6 sm:gap-6">
           <div className="flex flex-col-reverse">
             <dt className="text-sm font-medium text-gray-600">Jesse</dt>
-            <dd className="text-xs text-gray-500">Teacher</dd>
+            <dd className="text-xs text-gray-500">Instructor</dd>
           </div>
 
           <div className="flex flex-col-reverse">
@@ -197,8 +197,8 @@ export default function BookingCards(params: any) {
               {" "}
               Iyengar Yogastudio Berlin, Oranienstr. 163, in Kreuzberg{" "}
             </span>
-            and immerse yourself in a space that warmly envelops up to 10 souls,
-            nurturing deep connections. <br />
+            and immerse yourself in a space that warmly envelops up to 10 souls.{" "}
+            <br />
             <br />
           </p>
         </div>{" "}
@@ -208,7 +208,7 @@ export default function BookingCards(params: any) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
-            className="w-6 w-6 stroke-fuchsia-600"
+            className="w-6 stroke-fuchsia-600"
           >
             <path
               strokeLinecap="round"
@@ -227,7 +227,7 @@ export default function BookingCards(params: any) {
         <dl className="flex gap-4 mt-6 sm:gap-6">
           <div className="flex flex-col-reverse">
             <dt className="text-sm font-medium text-gray-600">Jesse</dt>
-            <dd className="text-xs text-gray-500">Teacher</dd>
+            <dd className="text-xs text-gray-500">Instructor</dd>
           </div>
 
           <div className="flex flex-col-reverse">
