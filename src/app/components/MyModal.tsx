@@ -10,19 +10,17 @@ export default function MyModal() {
   return (
     <div>
       <Button
-        onClick={() => props.setOpenModal("dismissible")}
+        onClick={() => props.setOpenModal("default")}
         className="mr-3 bg-slate-800 hover:bg-fuchsia-900"
       >
         {/* bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 */}
         Book Now
       </Button>
       <Modal
-        dismissible
-        position="center"
         size="lg"
-        show={props.openModal === "dismissible"}
+        show={props.openModal === "default"}
         onClose={() => props.setOpenModal(undefined)}
-        className="md:mt-[15%] md:ml-[33%]  md:items-center md:justify-center md:max-lg:flex"
+        className="md:mt-[15%] md:ml-[33%]  md:items-center md:justify-center"
       >
         <Modal.Header>
           <span className="m-4 text-2xl font-semibold"> Book Now </span>{" "}
