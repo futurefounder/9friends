@@ -58,6 +58,13 @@ export default function BookingCards(params: any) {
                 </h3>
               </div>{" "}
             </h3>
+            <Link href="https://classpass.com/studios/9friends-berlin">
+              <img
+                alt="ClassPass-Partner"
+                src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-CPpartner-white.png"
+                width="180"
+              />
+            </Link>
           </div>
         </div>{" "}
         <div className="mt-4">
@@ -170,6 +177,13 @@ export default function BookingCards(params: any) {
                   Kreuzberg
                 </h3>
               </div>{" "}
+              <Link href="https://classpass.com/studios/9friends-berlin">
+                <img
+                  alt="ClassPass-Partner"
+                  src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-CPpartner-white.png"
+                  width="180"
+                />
+              </Link>
             </h3>
           </div>
         </div>

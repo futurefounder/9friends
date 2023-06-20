@@ -69,7 +69,14 @@ export default function MyModal() {
                         Friedrichshain
                       </span>
                     </div>{" "}
-                  </h3>
+                  </h3>{" "}
+                  <Link href="https://classpass.com/studios/9friends-berlin">
+                    <img
+                      alt="ClassPass-Partner"
+                      src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-CPpartner-white.png"
+                      width="140"
+                    />
+                  </Link>
                 </div>
               </div>{" "}
               <Link
@@ -181,6 +188,13 @@ export default function MyModal() {
                         Kreuzberg
                       </span>
                     </div>{" "}
+                    <Link href="https://classpass.com/studios/9friends-berlin">
+                      <img
+                        alt="ClassPass-Partner"
+                        src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-CPpartner-white.png"
+                        width="140"
+                      />
+                    </Link>
                   </h3>
                 </div>
               </div>{" "}
