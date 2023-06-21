@@ -14,16 +14,15 @@ import DefaultNavbar from "./components/DefaultNavbar";
 export default function Home() {
   return (
     <div>
-      {/* <DefaultNavbar /> */}
-
-      <Navigation />
-      <Hero />
-      <BookingCards />
-      {/* <BookingCal /> */}
-      <Benefits />
-      <Testimonials />
-      <FAQ />
-      <Footer />
+      <div>
+        <Navigation />
+        <Hero />
+        <BookingCards />
+        <Benefits />
+        <Testimonials />
+        <FAQ />
+        <Footer />
+      </div>
     </div>
   );
 }
