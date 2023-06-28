@@ -34,7 +34,9 @@ export default async function Post({ params }: { params: { postId: string } }) {
 
   if (!posts.find((post) => post.id === postId)) notFound();
 
-  const { title, date, contentHtml } = await getPostData(postId);
+  const { title, date, headerImage, altText, contentHtml } = await getPostData(
+    postId
+  );
 
   const pubDate = getFormattedDate(date);
 
