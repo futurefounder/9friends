@@ -24,6 +24,8 @@ export function getSortedPostsData() {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date,
+      headerImage: matterResult.data.headerImage,
+      altText: matterResult.data.altText,
     };
 
     // Combine the data with the id
