@@ -51,19 +51,42 @@ export default async function Post({ params }: { params: { postId: string } }) {
             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
               {title}
             </h1>
+
             <p className="text-xs text-base font-light text-gray-500 dark:text-gray-400">
               {pubDate}
             </p>
             <img
               src={headerImage}
               alt={altText}
-              className="mt-4 mb-4"
-              width={300}
+              className="mt-4 mb-4 rounded-lg"
             />
+
             <article className="prose lg:prose-xl">
               <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
             </article>
-            <Link href="/blog">Back to blog</Link>
+
+            <Link
+              href="/blog"
+              className="text-base font-bold hover:text-purple-700"
+            >
+              <div className="flex flex-row">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                &nbsp;Back to Blog{" "}
+              </div>
+            </Link>
           </article>
         </div>
       </main>
