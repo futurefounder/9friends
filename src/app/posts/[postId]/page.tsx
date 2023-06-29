@@ -2,6 +2,8 @@ import getFormattedDate from "../../lib/getFormattedDate";
 import { getSortedPostsData, getPostData } from "../..//lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Navigation from "../../components/Nav";
+import Footer from "../../components/Footer";
 
 export function generateStaticParams() {
   const posts = getSortedPostsData();
@@ -41,33 +43,31 @@ export default async function Post({ params }: { params: { postId: string } }) {
   const pubDate = getFormattedDate(date);
 
   return (
-    <main className="px-6 mx-auto prose prose-xl prose-slate dark:prose-invert">
-      <h1 className="mt-4 mb-0 text-3xl">{title}</h1>
-      <p className="mt-0">{pubDate}</p>
-      <article>
-        <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        <p>
-          {" "}
-          <br />
-          <div className="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.8}
-              stroke="currentColor"
-              className="w-4 h-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
-              />
-            </svg>
-            <Link href="/blog">&nbsp; Back to blog</Link>
-          </div>
-        </p>
-      </article>
-    </main>
+    <div>
+      <Navigation />
+      <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 dark:bg-gray-900">
+        <div className="flex justify-between max-w-screen-xl px-4 mx-auto ">
+          <article className="w-full max-w-2xl mx-auto format format-sm sm:format-base lg:format-lg format-purple dark:format-invert">
+            <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+              {title}
+            </h1>
+            <p className="text-xs text-base font-light text-gray-500 dark:text-gray-400">
+              {pubDate}
+            </p>
+            <img
+              src={headerImage}
+              alt={altText}
+              className="mt-4 mb-4"
+              width={300}
+            />
+            <article className="prose lg:prose-xl">
+              <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            </article>
+            <Link href="/blog">Back to blog</Link>
+          </article>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }

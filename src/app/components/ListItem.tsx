@@ -18,6 +18,7 @@ export default function ListItem({ post }: Props) {
           href={`/posts/${id}`}
         >
           <div className="relative overflow-hidden bg-no-repeat bg-cover rounded-xl">
+            {/* eslint-disable-next-line @next/next/no-img-element  */}
             <img
               alt={altText}
               src={headerImage}
