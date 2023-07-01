@@ -1,6 +1,6 @@
 ---
 title: "Explore the Profound Benefits Of A Consistent Yoga Practice"
-date: "2023-06-29"
+date: "2023-07-01"
 headerImage: "https://images.pexels.com/photos/8032750/pexels-photo-8032750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 altText: "A woman doing a yoga pose"
 ---
@@ -34,3 +34,10 @@ In our fast-paced world, finding moments of stillness can be a game-changer. Con
 Yoga is a journey of self-discovery, and consistency is the key that unlocks transformation and personal growth. As you deepen your practice, you'll notice positive shifts happening within you—more self-acceptance, self-love, and a greater sense of purpose. Embrace the magic of consistent yoga practice and watch yourself bloom.
 
 Dear friend, the path of consistent yoga practice is filled with countless rewards. It's about more than just mastering poses, it's a journey of self-exploration and growth. So, roll out your mat, join us on this adventure, and let the **profound benefits of a consistent yoga practice** unfold in your life. Remember, it's not about perfection, it's about showing up and embracing the journey.
+
+###### Image Credit Pexels:
+
+- [MART PRODUCTION](https://www.pexels.com/photo/photo-of-a-woman-meditating-8032750/)
+- [nicollazzi xiong](https://www.pexels.com/photo/four-rock-formation-668353/)
+- [Elina Fairytale](https://www.pexels.com/photo/photo-of-man-doing-yoga-4662489/)
+- [EKATERINA BOLOVTSOVA](https://www.pexels.com/photo/a-woman-doing-a-yoga-ritual-on-a-yoga-mat-7113501/)

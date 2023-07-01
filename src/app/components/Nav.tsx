@@ -111,6 +111,32 @@ export default function Navigation() {
                 About{" "}
               </Link>{" "}
             </li>
+            <li>
+              {" "}
+              <Link
+                href="/blog"
+                className={
+                  pathname == "/blog"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : " block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
+              >
+                Blog{" "}
+              </Link>{" "}
+            </li>
+            <li>
+              {" "}
+              <Link
+                href="/sequences"
+                className={
+                  pathname == "/sequences"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : " block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
+              >
+                Sequences{" "}
+              </Link>{" "}
+            </li>
             {/* <li>
           <a
             href="#"
