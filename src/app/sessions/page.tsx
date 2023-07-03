@@ -1,6 +1,6 @@
 import Navigation from "../components/Nav";
 import Footer from "../components/Footer";
-export default function Sequences() {
+export default function Sessions() {
   return (
     <div>
       <Navigation />
