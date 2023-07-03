@@ -156,11 +156,7 @@ export default function MyModal() {
                   </div>{" "}
                   <Link href="https://classpass.com/studios/9friends-berlin">
                     {/* eslint-disable-next-line @next/next/no-img-element  */}
-                    <img
-Expand All
-	@@ -80,204 +162,51 @@ export default function MyModal() {
-                      width="140"
-                    />
+                    <img width="140" />
                   </Link>
                 </h3>
               </div>
