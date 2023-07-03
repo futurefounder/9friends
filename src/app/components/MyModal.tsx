@@ -71,6 +71,7 @@ export default function MyModal() {
                     </div>{" "}
                   </h3>{" "}
                   <Link href="https://classpass.com/studios/9friends-berlin">
+                    {/* eslint-disable-next-line @next/next/no-img-element  */}
                     <img
                       alt="ClassPass-Partner"
                       src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-CPpartner-white.png"
@@ -189,6 +190,7 @@ export default function MyModal() {
                       </span>
                     </div>{" "}
                     <Link href="https://classpass.com/studios/9friends-berlin">
+                      {/* eslint-disable-next-line @next/next/no-img-element  */}
                       <img
                         alt="ClassPass-Partner"
                         src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-CPpartner-white.png"
