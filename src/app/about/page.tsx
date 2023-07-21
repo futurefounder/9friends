@@ -90,7 +90,7 @@ export default function About() {
               height={750}
               className="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
               src="https://images.pexels.com/photos/8436719/pexels-photo-8436719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="Jesse at ceremony"
+              alt="Group doing yoga"
             />{" "}
             <br />
             I believe in the power of small group settings, as they foster a

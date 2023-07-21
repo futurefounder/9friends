@@ -40,12 +40,20 @@ export default function TindasaAI() {
   });
 
   useEffect(() => {
+    if (optionIndex === 11) {
+      setIsDone(true);
+    } else {
+      setIsDone(false);
+    }
+  }, [optionIndex]);
+
+  useEffect(() => {
     const fetchAPI = async () => {
       try {
         const response = await fetch("/api/myapi");
         const data = await response.json();
         setApiResponse(data);
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -57,6 +65,7 @@ export default function TindasaAI() {
   const [isClickedYes, setIsClickedYes] = useState(false);
   const [isClickedNo, setIsClickedNo] = useState(false);
   const [isClickedBack, setIsClickedBack] = useState(false);
+  const [isDone, setIsDone] = useState(false);
 
   const handleClickYes = () => {
     setIsClickedYes(true);
@@ -65,12 +74,14 @@ export default function TindasaAI() {
     }, 150);
 
     setSelectedSequenceOptions((prevOptions) => {
+      // @ts-ignore
       const updatedOptions = { ...prevOptions };
 
       const currentOption = optionKeys[optionIndex];
+      // @ts-ignore
       updatedOptions[currentOption] = true;
 
-      setOptionIndex((prevIndex) => (prevIndex + 1) % optionKeys.length); // Update optionIndex here
+      setOptionIndex((prevIndex) => (prevIndex + 1) % optionKeys.length);
 
       return updatedOptions;
     });
@@ -83,13 +94,15 @@ export default function TindasaAI() {
     }, 150);
 
     setSelectedSequenceOptions((prevOptions) => {
+      // @ts-ignore
       const updatedOptions = { ...prevOptions };
 
       const currentOption = optionKeys[optionIndex];
+      // @ts-ignore
       updatedOptions[currentOption] = false;
 
-      setOptionIndex((prevIndex) => (prevIndex + 1) % optionKeys.length); // Update optionIndex here
-
+      setOptionIndex((prevIndex) => (prevIndex + 1) % optionKeys.length);
+      // @ts-ignore
       return updatedOptions;
     });
   };
@@ -118,233 +131,124 @@ export default function TindasaAI() {
     </div>
   );
 
+  const options = {
+    0: {
+      title: "Chakras",
+      type: "Theme",
+      image: "/images/chakras.png",
+    },
+    1: {
+      title: "Seasons",
+      type: "Theme",
+      image: "/images/season.png",
+    },
+    2: {
+      title: "Spirituality",
+      type: "Theme",
+      image: "/images/spirituality.png",
+    },
+    3: {
+      title: "Moon",
+      type: "Theme",
+      image: "/images/moon.png",
+    },
+    4: {
+      title: "Power",
+      type: "Style",
+      image: "/images/power.png",
+    },
+    5: {
+      title: "Hatha",
+      type: "Style",
+      image: "/images/hatha.png",
+    },
+    6: {
+      title: "Vinyasa",
+      type: "Style",
+      image: "/images/vinyasa.png",
+    },
+    7: {
+      title: "Yin",
+      type: "Style",
+      image: "/images/yin.png",
+    },
+    8: {
+      title: "Beginner",
+      type: "Level",
+      image: "/images/beginner.png",
+    },
+    9: {
+      title: "Intermediate",
+      type: "Level",
+      image: "/images/intermediate.png",
+    },
+    10: {
+      title: "Advanced",
+      type: "Level",
+      image: "/images/advanced.png",
+    },
+    11: {
+      title: "Done",
+      type: "Done",
+      image: "/images/done.png",
+    },
+  };
+
+  const OptionComponent = ({
+    option,
+  }: {
+    option: { title: string; type: string; image: string };
+  }) => {
+    return (
+      <div>
+        <br />
+        <span className="text-3xl text-gray-400 font-bold">{option.type}</span>
+        <br />
+        <br />
+        <Image
+          src={option.image}
+          width={imgWidthSize}
+          height={imgHeightSize}
+          alt={option.title}
+          className="rounded-full"
+        />
+        {/* {console.log("Options is " + options)} */}
+        <br />
+        <span className="text-2xl font-base">{option.title}</span>
+        <br />
+        <br />
+      </div>
+    );
+  };
+
+  if (optionIndex >= 0 && optionIndex < 12) {
+    // @ts-ignore
+    content = <OptionComponent option={options[optionIndex]} />;
+  }
   if (optionIndex === 0) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Theme</span>
-        <br />
-        <br />
-        <Image
-          src="/images/chakras.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Chakras"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Chakras</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 1) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Theme</span>
-        <br />
-        <br />
-        <Image
-          src="/images/season.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Season"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Seasons</span>
-        <br />
-        <br />
-        <span className="text-sm font-base text-gray-400"> </span>
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 2) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Theme</span>
-        <br />
-        <br />
-        <Image
-          src="/images/spirituality.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Spirituality"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Spirituality</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 3) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Theme</span>
-        <br />
-        <br />
-        <Image
-          src="/images/moon.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Moon"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Moon Cycle</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 4) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Style</span>
-        <br />
-        <br />
-        <Image
-          src="/images/power.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Power"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Power</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 5) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Style</span>
-        <br />
-        <br />
-        <Image
-          src="/images/hatha.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Hatha"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Hatha</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 6) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Style</span>
-        <br />
-        <br />
-        <Image
-          src="/images/vinyasa.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Vinyasa"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Vinyasa</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 7) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Style</span>
-        <br />
-        <br />
-        <Image
-          src="/images/yin.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Yin"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Yin</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 8) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Level</span>
-        <br />
-        <br />
-        <Image
-          src="/images/beginner.png"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="Beginner"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Beginner</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 9) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Level</span>
-        <br />
-        <br />
-        <Image
-          src="/images/intermediate.jpg"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="intermediate"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Intermediate</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 10) {
-    content = (
-      <div>
-        <br />
-        <span className="text-3xl text-gray-400 font-bold">Level</span>
-        <br />
-        <br />
-        <Image
-          src="/images/advanced.jpg"
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt="advanced"
-          className="rounded-full"
-        />
-        <br />
-        <span className="text-2xl font-base"> Advanced</span>
-        <br />
-        <br />
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   } else if (optionIndex === 11) {
-    content = (
-      <div>
-        <span className="text-xl font-base"> Result</span>{" "}
-      </div>
-    );
+    content = <OptionComponent option={options[optionIndex]} />;
   }
 
   return (
@@ -368,6 +272,7 @@ export default function TindasaAI() {
           <div className="flex items-center justify-center flex-1 ">
             {" "}
             <button
+              disabled={isDone ? true : false}
               className={`p-4 m-2 rounded-full bg-sky-50 text-xl ${
                 isClickedBack ? "text-2xl bg-sky-400" : ""
               }`}
@@ -375,9 +280,11 @@ export default function TindasaAI() {
                 handleClickBack();
               }}
             >
-              ↩️
+              {isDone ? "🔮" : "↩️"}
+              {/* {console.log(isDone)} */}
             </button>
             <button
+              disabled={isDone ? true : false}
               className={`p-6 m-4 rounded-full bg-red-50 text-5xl ${
                 isClickedNo ? "text-6xl bg-red-400" : ""
               }`}
@@ -385,24 +292,25 @@ export default function TindasaAI() {
                 handleClickNo();
               }}
             >
-              ❌{" "}
+              {isDone ? "🔮" : "❌"}{" "}
             </button>
           </div>
           <div className="flex items-center justify-center flex-1">
             {" "}
             <button
+              disabled={isDone ? true : false}
               className={`p-6 m-4 rounded-full bg-green-50 text-5xl ${
                 isClickedYes ? "text-6xl bg-green-300" : ""
               }`}
               onClick={() => {
                 handleClickYes();
                 // handleAPICall();
-                console.log(optionIndex);
-                console.log(selectedSequenceOptions);
+                // console.log(optionIndex);
+                // console.log(selectedSequenceOptions);
               }}
             >
               {" "}
-              💚
+              {isDone ? "🔮" : "💚"}
             </button>
           </div>
         </div>

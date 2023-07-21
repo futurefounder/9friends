@@ -35,6 +35,10 @@ Yoga is a journey of self-discovery, and consistency is the key that unlocks tra
 
 Dear friend, the path of consistent yoga practice is filled with countless rewards. It's about more than just mastering poses, it's a journey of self-exploration and growth. So, roll out your mat, join us on this adventure, and let the **profound benefits of a consistent yoga practice** unfold in your life. Remember, it's not about perfection, it's about showing up and embracing the journey.
 
+With love and peace,
+
+_Jesse_
+
 ###### Image Credit Pexels:
 
 - [MART PRODUCTION](https://www.pexels.com/photo/photo-of-a-woman-meditating-8032750/)

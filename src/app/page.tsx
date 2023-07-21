@@ -17,9 +17,9 @@ export default function Home() {
       <div>
         <Navigation />
         <Hero />
-        <BookingCards />
-        <Benefits />
         <Testimonials />
+        {/* <BookingCards /> */}
+        <Benefits />
         <FAQ />
         <Footer />
       </div>

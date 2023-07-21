@@ -60,15 +60,6 @@ export default function DefaultNavbar() {
                   <button
                     type="button"
                     className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-                    data-cal-link="hi-jesse/9friends-yoga-xberg"
-                  >
-                    Book Xberg{" "}
-                  </button>
-                </p>
-                <p className="text-base leading-relaxed text-center text-gray-500 dark:text-gray-400">
-                  <button
-                    type="button"
-                    className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
                     data-cal-link="hi-jesse/9friends-yoga-fhain"
                   >
                     Book Fhain{" "}

@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+
 const Benefits = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -7,9 +9,9 @@ const Benefits = () => {
         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
           <span className="relative inline-block">
             <span className="relative"></span>
-          </span>{" "}
-          <span className=""></span> Small Groups, <br /> Big Connections:{" "}
-          <br /> Unleash Your Yoga Journey.
+          </span>
+          Small Groups, <br /> Big Connections: <br /> Unleash Your Yoga
+          Journey.
         </h2>
         <p className="text-base text-gray-700 md:text-lg">
           Experience the beauty of small group yoga classes, fostering a sense
@@ -105,15 +107,16 @@ const Benefits = () => {
               </div>
             </div>
             <div>
-              <h6 className="mb-2 font-semibold leading-5">
-                Tailored Growth Guidance
-              </h6>
+              <h6 className="mb-2 font-semibold leading-5">Growth Guidance</h6>
               <p className="text-sm text-gray-900">
                 Deepen your practice with personalized attention and
                 modifications in a small group setting, empowering your yoga
-                journey. Receive valuable insights into yogic philosophy and
-                class sequences after each session to further enhance your
-                exploration and growth.
+                journey. Receive valuable insights into yogic philosophy and{" "}
+                <Link href="/sessions" className="text-indigo-600 underline">
+                  {" "}
+                  class sequences after each session
+                </Link>
+                &nbsp;to further enhance your exploration and growth.
               </p>
             </div>
           </div>
