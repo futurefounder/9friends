@@ -3,11 +3,24 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+interface Choice {
+  text: string;
+}
+
+interface ApiResponse {
+  choices: Choice[];
+}
+
 export default function TindasaAI() {
-  const [apiResponse, setApiResponse] = useState(null);
+  const [isClickedYes, setIsClickedYes] = useState(false);
+  const [isClickedNo, setIsClickedNo] = useState(false);
+  const [isClickedBack, setIsClickedBack] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+
+  const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+
   const [optionIndex, setOptionIndex] = useState(-1);
   const optionKeys = [
-    "start",
     "theme_chakras",
     "theme_season",
     "theme_spirituality",
@@ -25,7 +38,6 @@ export default function TindasaAI() {
   const imgHeightSize = 300;
 
   const [selectedSequenceOptions, setSelectedSequenceOptions] = useState({
-    start: false,
     theme_chakras: false,
     theme_season: false,
     theme_spirituality: false,
@@ -47,64 +59,57 @@ export default function TindasaAI() {
     }
   }, [optionIndex]);
 
+  const fetchAPI = async () => {
+    try {
+      const response = await fetch("/api/myapi", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          selectedSequenceOptions,
+        }),
+      });
+
+      const data = await response.json();
+      setApiResponse(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchAPI = async () => {
-      try {
-        const response = await fetch("/api/myapi");
-        const data = await response.json();
-        setApiResponse(data);
-        // console.log(data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-
-    fetchAPI();
-  }, []);
-
-  const [isClickedYes, setIsClickedYes] = useState(false);
-  const [isClickedNo, setIsClickedNo] = useState(false);
-  const [isClickedBack, setIsClickedBack] = useState(false);
-  const [isDone, setIsDone] = useState(false);
+    if (isDone) {
+      fetchAPI();
+    }
+  }, [isDone]);
 
   const handleClickYes = () => {
-    setIsClickedYes(true);
-    setTimeout(() => {
-      setIsClickedYes(false);
-    }, 150);
+    setSelectedSequenceOptions((prevState) => {
+      const keys = Object.keys(prevState);
+      const currentOption = keys[optionIndex];
 
-    setSelectedSequenceOptions((prevOptions) => {
-      // @ts-ignore
-      const updatedOptions = { ...prevOptions };
-
-      const currentOption = optionKeys[optionIndex];
-      // @ts-ignore
-      updatedOptions[currentOption] = true;
-
-      setOptionIndex((prevIndex) => (prevIndex + 1) % optionKeys.length);
-
-      return updatedOptions;
+      return {
+        ...prevState,
+        [currentOption]: true,
+      };
     });
+
+    setOptionIndex((prevIndex) => prevIndex + 1);
   };
 
   const handleClickNo = () => {
-    setIsClickedNo(true);
-    setTimeout(() => {
-      setIsClickedNo(false);
-    }, 150);
+    setSelectedSequenceOptions((prevState) => {
+      const keys = Object.keys(prevState);
+      const currentOption = keys[optionIndex];
 
-    setSelectedSequenceOptions((prevOptions) => {
-      // @ts-ignore
-      const updatedOptions = { ...prevOptions };
-
-      const currentOption = optionKeys[optionIndex];
-      // @ts-ignore
-      updatedOptions[currentOption] = false;
-
-      setOptionIndex((prevIndex) => (prevIndex + 1) % optionKeys.length);
-      // @ts-ignore
-      return updatedOptions;
+      return {
+        ...prevState,
+        [currentOption]: false,
+      };
     });
+
+    setOptionIndex((prevIndex) => prevIndex + 1);
   };
 
   const handleClickBack = () => {
@@ -117,6 +122,7 @@ export default function TindasaAI() {
 
   let content = (
     <div>
+      {/* {console.log(JSON.stringify(selectedSequenceOptions, null, 4))} */}
       <div className="text-center">
         <Image
           src="/images/person-meditating.svg"
@@ -124,6 +130,7 @@ export default function TindasaAI() {
           height={imgHeightSize}
           alt="Person meditating"
           className="rounded-full"
+          priority={false}
         />{" "}
         <br />
         <span className="text-xl font-base"> Start by clicking 💚</span>{" "}
@@ -188,8 +195,8 @@ export default function TindasaAI() {
       image: "/images/advanced.png",
     },
     11: {
-      title: "Done",
-      type: "Done",
+      title: "Result",
+      type: "Result",
       image: "/images/done.png",
     },
   };
@@ -202,19 +209,76 @@ export default function TindasaAI() {
     return (
       <div>
         <br />
-        <span className="text-3xl text-gray-400 font-bold">{option.type}</span>
-        <br />
-        <br />
-        <Image
-          src={option.image}
-          width={imgWidthSize}
-          height={imgHeightSize}
-          alt={option.title}
-          className="rounded-full"
-        />
-        {/* {console.log("Options is " + options)} */}
-        <br />
-        <span className="text-2xl font-base">{option.title}</span>
+
+        {isDone ? (
+          <>
+            {apiResponse?.choices?.[0]?.text ? (
+              <>
+                <span className="text-3xl font-bold text-gray-400">
+                  🔮 Your Sequence:
+                </span>
+                <br />
+                <br />
+                <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 mx-auto overflow-auto">
+                  <pre className="whitespace-pre-wrap text-center">
+                    {apiResponse.choices[0].text}
+                  </pre>
+                </div>{" "}
+              </>
+            ) : (
+              <div
+                role="status"
+                className="flex flex-col items-center justify-center"
+              >
+                <span className="text-xl font-bold text-gray-400">
+                  🪄 Manifesting your unique yoga flow... <br />
+                  please float in patience for a few mindful moments!
+                </span>
+                <br />
+                <br />
+                <svg
+                  aria-hidden="true"
+                  className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-violet-500"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill"
+                  />
+                </svg>
+                <span className="sr-only">Loading...</span>
+              </div>
+            )}
+            {/* {console.log(
+              "API usage response is " +
+                JSON.stringify(apiResponse?.usage, null, 4)
+            )} */}
+          </>
+        ) : (
+          <>
+            {" "}
+            <span className="text-3xl font-bold text-gray-400">
+              {option.type}
+            </span>
+            <br />
+            <br />
+            <Image
+              src={option.image}
+              width={imgWidthSize}
+              height={imgHeightSize}
+              alt={option.title}
+              className="rounded-full"
+            />
+            <br />
+            <span className="text-2xl font-base">{option.title}</span>
+          </>
+        )}
         <br />
         <br />
       </div>
@@ -273,43 +337,52 @@ export default function TindasaAI() {
             {" "}
             <button
               disabled={isDone ? true : false}
-              className={`p-4 m-2 rounded-full bg-sky-50 text-xl ${
+              className={`p-4 m-2 rounded-full bg-sky-50 text-sm md:text-xl ${
                 isClickedBack ? "text-2xl bg-sky-400" : ""
+              } ${
+                isDone
+                  ? "shadow-md"
+                  : "shadow-md transform active:scale-125 transition-transform"
               }`}
               onClick={() => {
                 handleClickBack();
               }}
             >
               {isDone ? "🔮" : "↩️"}
-              {/* {console.log(isDone)} */}
             </button>
             <button
               disabled={isDone ? true : false}
-              className={`p-6 m-4 rounded-full bg-red-50 text-5xl ${
+              className={`p-6 m-4 rounded-full bg-red-50 text-lg md:text-5xl ${
                 isClickedNo ? "text-6xl bg-red-400" : ""
+              } ${
+                isDone
+                  ? "shadow-md"
+                  : "shadow-md transform active:scale-125 transition-transform"
               }`}
               onClick={() => {
                 handleClickNo();
               }}
             >
-              {isDone ? "🔮" : "❌"}{" "}
+              {isDone ? "🔮" : "❌"}
             </button>
           </div>
           <div className="flex items-center justify-center flex-1">
             {" "}
             <button
               disabled={isDone ? true : false}
-              className={`p-6 m-4 rounded-full bg-green-50 text-5xl ${
+              className={`p-6 m-4 rounded-full bg-green-50 text-lg md:text-5xl ${
                 isClickedYes ? "text-6xl bg-green-300" : ""
+              } ${
+                isDone
+                  ? "shadow-md"
+                  : "shadow-md transform active:scale-125 transition-transform"
               }`}
               onClick={() => {
                 handleClickYes();
                 // handleAPICall();
-                // console.log(optionIndex);
-                // console.log(selectedSequenceOptions);
+                // console.log(JSON.stringify(selectedSequenceOptions, null, 4));
               }}
             >
-              {" "}
               {isDone ? "🔮" : "💚"}
             </button>
           </div>
