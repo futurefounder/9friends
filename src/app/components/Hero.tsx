@@ -2,6 +2,7 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import StickyBanner from "./StickyBanner";
 
 const Hero = (params: any) => {
   useEffect(() => {
@@ -15,9 +16,10 @@ const Hero = (params: any) => {
   }, []);
   return (
     <section className="">
+      <StickyBanner />
       <div className="overflow-hidden sm:grid sm:grid-cols-2">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+          <div className="max-w-xl mx-auto text-center ltr:sm:text-left rtl:sm:text-right">
             <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
               Book Your <span className="italic"> Small Group</span> <br />
               <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
@@ -40,7 +42,6 @@ const Hero = (params: any) => {
                 </svg>
               </div>
             </h2>
-
             <p className="text-gray-500 md:mt-4 md:block">
               Get ready for an energizing and joyful experience! <br />
               <br />{" "}
@@ -70,7 +71,7 @@ const Hero = (params: any) => {
               </button>
               <br />
               <br />
-              <div className="flex justify-center items-center">
+              <div className="flex items-center justify-center">
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
@@ -90,7 +91,7 @@ const Hero = (params: any) => {
         <img
           alt="Student"
           src="https://images.pexels.com/photos/8436719/pexels-photo-8436719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          className="h-56 w-full rounded object-cover sm:h-full"
+          className="object-cover w-full h-56 rounded sm:h-full"
         />
       </div>
     </section>
