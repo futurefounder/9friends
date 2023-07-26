@@ -2,7 +2,7 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import StickyBanner from "./StickyBanner";
+// import StickyBanner from "./StickyBanner";
 
 const Hero = (params: any) => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const Hero = (params: any) => {
   }, []);
   return (
     <section className="">
-      <StickyBanner />
+      {/* <StickyBanner /> */}
       <div className="overflow-hidden sm:grid sm:grid-cols-2">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="max-w-xl mx-auto text-center ltr:sm:text-left rtl:sm:text-right">

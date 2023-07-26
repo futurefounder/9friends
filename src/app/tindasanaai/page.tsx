@@ -82,7 +82,7 @@ export default function TindasaAI() {
     if (isDone) {
       fetchAPI();
     }
-  }, [fetchAPI, isDone]);
+  }, [isDone]);
 
   const handleClickYes = () => {
     setSelectedSequenceOptions((prevState) => {
