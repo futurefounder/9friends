@@ -7,26 +7,26 @@ export default async function handler(req, res) {
     const { selectedSequenceOptions } = req.body;
 
     // create the prompt based on selectedSequenceOptions
-    const prompt = `Create a **bold** and dynamic yoga sequence with a short, catchy title. This sequence should consist of:
+    const prompt = `Please create a bold and dynamic yoga sequence with a concise and attention-grabbing first sentence. The sequence should include the following:
 
-    - A captivating headline (max 7 words), highlighting the personalized preferences that have been chosen for the sequence: ${JSON.stringify(
+    1. A captivating first sentence (maximum 7 words) that highlights the personalized preferences chosen for the sequence, such as ${JSON.stringify(
       selectedSequenceOptions
-    )}, Note: Do not include the word 'Title' in the heading.. Example headline output 1: "Seasonal Power Flow". Example headline output 2: "Moon Inspired Advanced Chakra Flow".
+    )}. Please do not include the word 'Title' or 'Headline' in the first sentence. For example, a suitable first sentence could be "Energizing Morning Flow", "Chakra-Focused Vinyasa Flow" or "Balancing Yin Yoga Sequence."
 
-    - A fun and yogic style introduction to  the personalized preferences that have been chosen for the sequence: ${JSON.stringify(
+    2. Leave a line break between the first and this part. Begin with a fun and yogic style introduction to the personalized preferences chosen for the sequence, which can be described as ${JSON.stringify(
       selectedSequenceOptions
-    )}.
+    )}. Please do not label this section as 'Introduction'.
+    
 
-    - Two to three Breathing exercises, with each exercise providing a brief (maximum 1 sentence) description of the personalized preferences that have been chosen for the sequence: ${JSON.stringify(
+3. Include one or two breathing exercises, each accompanied by a brief (maximum 1 sentence) description of the personalized preferences chosen for the sequence, such as ${JSON.stringify(
       selectedSequenceOptions
-    )}.
-    
-    - The main section should include a eight to ten specific asanas, with each asana's name provided in both English and Sanskrit (romanized, no sanskrit letters) and a short (maximum 1 sentence) explanation of the benefit/s of the pose. 
-    
-    - The sequence should end with an inspiring closing inspiring remark. 
-    
-    Only add numbers to the Breathing exercises and Asanas, not to any other parts. Do not include the word 'Title' in the heading.
-    `;
+    )}. For instance, you could include a breathing exercise that focuses on deep relaxation or one that promotes mental clarity.
+
+4. The main section of the sequence should consist of eight to ten specific asanas. Please provide the name of each asana in both English and Sanskrit (romanized, without Sanskrit letters), along with a short (maximum 1 sentence) explanation of the benefits of each pose. For example, you could include poses like Downward-Facing Dog (Adho Mukha Svanasana) to stretch and strengthen the entire body or Warrior II (Virabhadrasana II) to improve balance and focus.
+
+5. Conclude the sequence with an inspiring closing remark that leaves the practitioner feeling motivated and uplifted.
+
+Please remember to add numbers only to the breathing exercises and asanas, excluding any other parts of the sequence. Also, avoid including the word 'Title' in the heading.`;
 
     const response = await fetch(url, {
       method: "POST",

@@ -12,8 +12,8 @@ interface ApiResponse {
 }
 
 export default function TindasaAI() {
-  const [isClickedYes, setIsClickedYes] = useState(false);
-  const [isClickedNo, setIsClickedNo] = useState(false);
+  const [isClickedYes] = useState(false);
+  const [isClickedNo] = useState(false);
   const [isClickedBack, setIsClickedBack] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
@@ -120,6 +120,10 @@ export default function TindasaAI() {
     setOptionIndex((prevIndex) => prevIndex - 1);
   };
 
+  const handleClickRepeat = () => {
+    window.location.reload();
+  };
+
   let content = (
     <div>
       {/* {console.log(JSON.stringify(selectedSequenceOptions, null, 4))} */}
@@ -214,16 +218,25 @@ export default function TindasaAI() {
           <>
             {apiResponse?.choices?.[0]?.text ? (
               <>
-                <span className="text-3xl font-bold text-gray-400">
+                <br />
+                <br />
+                <span className="text-3xl font-bold text-gray-800">
                   🔮 Your Sequence:
                 </span>
                 <br />
-                <br />
                 <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 mx-auto overflow-auto">
-                  <pre className="whitespace-pre-wrap text-center">
+                  <pre className="whitespace-pre-wrap text-center font-sans text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
                     {apiResponse.choices[0].text}
                   </pre>
                 </div>{" "}
+                <br />
+                <br />{" "}
+                <button
+                  onClick={handleClickRepeat}
+                  className="text-xl text-gray-800 hover:text-purple-600 font-bold p-4 m-2 rounded-full text-sm md:text-xl"
+                >
+                  🔄 Start again
+                </button>{" "}
               </>
             ) : (
               <div
@@ -232,7 +245,8 @@ export default function TindasaAI() {
               >
                 <span className="text-xl font-bold text-gray-400">
                   🪄 Manifesting your unique yoga flow... <br />
-                  please float in patience for a few mindful moments!
+                  please float in patience for a few mindful moments! <br />{" "}
+                  (this might take up to 20 seconds)
                 </span>
                 <br />
                 <br />

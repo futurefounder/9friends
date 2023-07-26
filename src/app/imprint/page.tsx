@@ -18,8 +18,12 @@ export default function Imprint() {
             <p className="text-base text-gray-700 md:text-lg">
               /9Friends <br />
               Responsible for Content: Jesse Khala <br />
-              Schliemannstr. 44 <br />
-              10437 Berlin <br /> hello@my9friends.com <br />
+              Address upon request <br />{" "}
+              <Link className="hover:text-purple-500" href="/contact">
+                {" "}
+                Contact{" "}
+              </Link>
+              <br />
               <br />
               This Legal Notice complies with the German laws under § 5 TMG and
               § 55 RStV. <br />
