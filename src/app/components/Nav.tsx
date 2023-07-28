@@ -25,7 +25,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 h-16 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
+    <nav className="sticky top-0 z-50 h-18 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
       <Head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js" />
       </Head>
