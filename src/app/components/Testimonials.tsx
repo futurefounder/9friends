@@ -502,7 +502,7 @@ export default function Testimonials() {
                           </p>
 
                           <p className="mt-4 leading-relaxed text-gray-500">
-                            Jesse's yoga class was fantastic -{" "}
+                            Jesse&apo;s yoga class was fantastic -{" "}
                             <span className="font-bold">
                               well-guided with a wonderfully soothing and
                               calming
