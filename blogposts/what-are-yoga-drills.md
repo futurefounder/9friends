@@ -38,7 +38,9 @@ Get ready to channel your inner crow! Start laying on your back and slightly ben
 
 Are you excited to take your yoga practice to new heights? Well, it's time to embrace the playfulness of yoga drills and unlock the potential within you! You can easily incorporate these drills into your home practice, exploring the depths of your strength and balance in the comfort of your sacred space.
 
-**If you crave a collective experience, why not join us in one of our yoga classes?** Our wonderful community is always open to new members on this blissful journey of yoga.
+[**If you crave a collective experience, why not join us in one of our yoga classes in Berlin in August 2023?**](https://cal.com/hi-jesse/9friends-yoga-fhain?month=2023-08&date=2023-08-01)
+
+Our wonderful community is always open to new members on this blissful journey of yoga.
 
 Remember, dear friends, that yoga is all about exploration, self-discovery, and having fun along the way. So, grab your mat, open your heart, and let the yoga drills be your joyful guides towards mastering those awe-inspiring postures. May your practice be filled with light and laughter!
 

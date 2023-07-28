@@ -11,6 +11,8 @@ import "swiper/css/scrollbar";
 
 // import styles from "./slider.module.scss";
 
+const nameStyle = "mt-4 text-base font-bold text-gray-500";
+
 export default function Testimonials() {
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
@@ -180,9 +182,101 @@ export default function Testimonials() {
                         height={80}
                         className="object-cover w-16 h-16 rounded-full"
                       />
-                      <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Maria
-                      </footer>
+                      <footer className={nameStyle}>&mdash; Maria</footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-indigo-100 text-indigo-700 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                            🌳 Intermediate
+                          </span>
+                        </div>
+                      </div>
+                    </blockquote>{" "}
+                  </div>
+
+                  <div className="swiper-slide bg-slate-400">
+                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white">
+                      <div>
+                        <div className="flex gap-0.5 text-green-500">
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        </div>
+
+                        <div className="mt-4">
+                          <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
+                            Best Balance
+                          </p>
+
+                          <p className="mt-4 leading-relaxed text-gray-500">
+                            I have tried several yoga classes but Jesse&apos;s
+                            approach is by far the best for me.{" "}
+                            <span className="font-bold">
+                              {" "}
+                              The perfect balance of workout, meditation and
+                              breathing exercises.{" "}
+                            </span>
+                            After each session I feel extremely relaxed and full
+                            of energy.
+                          </p>
+                        </div>
+                      </div>{" "}
+                      <br />
+                      <Image
+                        alt="Dog"
+                        src="/images/jakob.jpg"
+                        width={80}
+                        height={80}
+                        className="object-cover w-16 h-16 rounded-full"
+                      />
+                      <footer className={nameStyle}>&mdash; Jakob</footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
+                            🪴 Beginner
+                          </span>
+                        </div>
+                      </div>
                     </blockquote>
                   </div>
 
@@ -255,84 +349,14 @@ export default function Testimonials() {
                           </p>
                         </div>
                       </div>
-
-                      <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Can
-                      </footer>
-                    </blockquote>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
-                      <div>
-                        <div className="flex gap-0.5 text-green-500">
-                          <svg
-                            className="w-5 h-5"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-
-                          <svg
-                            className="w-5 h-5"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-
-                          <svg
-                            className="w-5 h-5"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-
-                          <svg
-                            className="w-5 h-5"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-
-                          <svg
-                            className="w-5 h-5"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        </div>
-
-                        <div className="mt-4">
-                          <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
-                            Calm & Focused Energy{" "}
-                          </p>
-
-                          <p className="mt-4 leading-relaxed text-gray-500">
-                            The classes with Jesse are highly recommended. I
-                            especially appreciate his calm and positive way of
-                            communication that creates an{" "}
-                            <span className="font-bold">
-                              {" "}
-                              atmosphere of energy and focus
-                            </span>{" "}
-                            which lasts well beyond the actual sessions.
-                          </p>
+                      <footer className={nameStyle}>&mdash; Can</footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+                            🌱 First-Timer
+                          </span>
                         </div>
                       </div>
-
-                      <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Stephan
-                      </footer>
                     </blockquote>
                   </div>
 
@@ -412,14 +436,19 @@ export default function Testimonials() {
                         height={80}
                         className="object-cover w-16 h-16 rounded-full"
                       />
-                      <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Julian
-                      </footer>
+                      <footer className={nameStyle}>&mdash; Julian</footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                            🪴 Beginner
+                          </span>
+                        </div>
+                      </div>
                     </blockquote>
                   </div>
 
-                  <div className="swiper-slide bg-slate-400">
-                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white">
+                  <div className="swiper-slide">
+                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
                         <div className="flex gap-0.5 text-green-500">
                           <svg
@@ -470,33 +499,32 @@ export default function Testimonials() {
 
                         <div className="mt-4">
                           <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
-                            Best Balance
+                            Calm & Focused Energy{" "}
                           </p>
 
                           <p className="mt-4 leading-relaxed text-gray-500">
-                            I have tried several yoga classes but Jesse&apos;s
-                            approach is by far the best for me.{" "}
+                            The classes with Jesse are highly recommended. I
+                            especially appreciate his calm and positive way of
+                            communication that creates an{" "}
                             <span className="font-bold">
                               {" "}
-                              The perfect balance of workout, meditation and
-                              breathing exercises.{" "}
-                            </span>
-                            After each session I feel extremely relaxed and full
-                            of energy.
+                              atmosphere of energy and focus
+                            </span>{" "}
+                            which lasts well beyond the actual sessions.
                           </p>
                         </div>
-                      </div>{" "}
-                      <br />
-                      <Image
-                        alt="Dog"
-                        src="/images/jakob.jpg"
-                        width={80}
-                        height={80}
-                        className="object-cover w-16 h-16 rounded-full"
-                      />
-                      <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Jakob
+                      </div>
+
+                      <footer className="mt-8 text-sm font-bold text-gray-500">
+                        &mdash; Stephan
                       </footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                            🪴 Beginner
+                          </span>
+                        </div>
+                      </div>
                     </blockquote>
                   </div>
 
@@ -567,9 +595,14 @@ export default function Testimonials() {
                           </p>
                         </div>
                       </div>{" "}
-                      <footer className="mt-8 text-sm text-gray-500">
-                        &mdash; Nury
-                      </footer>
+                      <footer className={nameStyle}>&mdash; Nury</footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+                            🌱 First-Timer
+                          </span>
+                        </div>
+                      </div>
                     </blockquote>
                   </div>
                 </div>
