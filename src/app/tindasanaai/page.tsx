@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Footer from "../components/Footer";
 
 interface Choice {
   text: string;
@@ -402,6 +403,7 @@ export default function TindasaAI() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
