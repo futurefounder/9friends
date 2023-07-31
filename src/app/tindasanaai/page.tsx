@@ -161,11 +161,21 @@ export default function TindasaAI() {
     Mixed: "level_mixed",
   };
 
-  const handleImageClick = (selection) => {
-    setSelectedSequenceOptions((prevOptions) => ({
-      ...prevOptions,
-      [selectionMapping[selection]]: true,
-    }));
+  const handleImageClick = (selection, event) => {
+    setSelectedSequenceOptions((prevOptions) => {
+      const newSelection = !prevOptions[selectionMapping[selection]];
+      if (newSelection) {
+        event.target.style.opacity = 1; 
+        event.target.style.border = "4px solid #a855f7"; 
+      } else {
+        event.target.style.opacity = 0.5; 
+        event.target.style.border = "none"; 
+      }
+      return {
+        ...prevOptions,
+        [selectionMapping[selection]]: newSelection,
+      };
+    });
   };
 
   switch (stage) {
@@ -200,7 +210,7 @@ export default function TindasaAI() {
           <div className="mt-10 flex flex-col items-center justify-center text-center">
             <span className="font-bold text-3xl text-gray-800">
               {" "}
-              Pick Your Theme{" "}
+              Pick One Or More Themes{" "}
             </span>
             <br />
             <div className="m-6 grid grid-cols-2 grid-rows-1 gap-4">
@@ -210,10 +220,14 @@ export default function TindasaAI() {
                   src={options[0].image}
                   width={imgWidthSize}
                   height={imgHeightSize}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[options[0].title]
+                      ? "opacity-100"
+                      : "opacity-50"
+                  }`}
                   alt={options[0].title}
-                  className="rounded-full mb-2 hover:scale-105"
-                  onClick={() => handleImageClick(options[0].title)}
-                />{" "}
+                  onClick={(event) => handleImageClick(options[0].title, event)}
+                />
                 <span className="font-semibold">{options[0].title}</span>
               </div>
               <div className="">
@@ -223,8 +237,12 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[1].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[1].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[options[1].title]
+                      ? "opacity-100"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[1].title, event)}
                 />
                 <span className="font-semibold">{options[1].title}</span>
               </div>
@@ -235,8 +253,12 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[2].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[2].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[options[2].title]
+                      ? "opacity-100"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[2].title, event)}
                 />
                 <span className="font-semibold">{options[2].title}</span>
               </div>
@@ -247,8 +269,12 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[3].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[3].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[options[3].title]
+                      ? "opacity-100"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[3].title, event)}
                 />
                 <span className="font-semibold">{options[3].title}</span>
               </div>
@@ -278,8 +304,14 @@ export default function TindasaAI() {
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[4].title}
-                    className="rounded-full hover:scale-105 mb-2"
-                    onClick={() => handleImageClick(options[4].title)}
+                    className={`rounded-full hover:scale-105 mb-2 ${
+                      selectedSequenceOptions[options[4].title]
+                        ? "opacity-100"
+                        : "opacity-50"
+                    }`}
+                    onClick={(event) =>
+                      handleImageClick(options[4].title, event)
+                    }
                   />{" "}
                   <span className="font-semibold">{options[4].title}</span>
                 </div>
@@ -289,8 +321,14 @@ export default function TindasaAI() {
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[5].title}
-                    className="rounded-full hover:scale-105 mb-2"
-                    onClick={() => handleImageClick(options[5].title)}
+                    className={`rounded-full hover:scale-105 mb-2 ${
+                      selectedSequenceOptions[options[5].title]
+                        ? "opacity-100"
+                        : "opacity-50"
+                    }`}
+                    onClick={(event) =>
+                      handleImageClick(options[5].title, event)
+                    }
                   />{" "}
                   <span className="font-semibold">{options[5].title}</span>
                 </div>
@@ -300,8 +338,14 @@ export default function TindasaAI() {
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[6].title}
-                    className="rounded-full hover:scale-105 mb-2"
-                    onClick={() => handleImageClick(options[6].title)}
+                    className={`rounded-full hover:scale-105 mb-2 ${
+                      selectedSequenceOptions[options[3].title]
+                        ? "opacity-100"
+                        : "opacity-50"
+                    }`}
+                    onClick={(event) =>
+                      handleImageClick(options[6].title, event)
+                    }
                   />{" "}
                   <span className="font-semibold">{options[6].title}</span>
                 </div>
@@ -311,8 +355,14 @@ export default function TindasaAI() {
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[7].title}
-                    className="rounded-full hover:scale-105 mb-2"
-                    onClick={() => handleImageClick(options[7].title)}
+                    className={`rounded-full hover:scale-105 mb-2 ${
+                      selectedSequenceOptions[options[7].title]
+                        ? "opacity-100"
+                        : "opacity-50"
+                    }`}
+                    onClick={(event) =>
+                      handleImageClick(options[7].title, event)
+                    }
                   />{" "}
                   <span className="font-semibold">{options[7].title}</span>
                 </div>
