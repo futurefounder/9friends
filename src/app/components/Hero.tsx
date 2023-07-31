@@ -47,7 +47,15 @@ const Hero = (params: any) => {
               <br />{" "}
               <span className="font-bold">
                 {" "}
-                🔥 1. & 3. wed. of the month - Yoga Drills:{" "}
+                🔥 1. & 3. wed. of the month -{" "}
+                <Link
+                  className="font-bold text-purple-500 underline"
+                  href="/posts/what-are-yoga-drills"
+                >
+                  {" "}
+                  Yoga Drills
+                </Link>
+                :{" "}
               </span>
               Strengthening exercises for learning / mastering advanced yoga
               poses (Beginners welcome!). <br />
