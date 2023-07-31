@@ -98,9 +98,6 @@ export default function About() {
             9Friends, a space where we can come together, practice yoga, and
             support each other on our individual journeys of self-discovery and
             growth. <br />
-            <br /> Join me on the mat as we cultivate strength, flexibility, and
-            inner peace through mindfulness, movement, breathwork, and
-            meditation. <br />
             <br />{" "}
             <span className="font-bold">
               {" "}
