@@ -2,6 +2,17 @@
 
 Welcome to the **YogaClass Booking Landing Page**! 
 
+# Landing Page Images
+
+**Screenshot Fullpage**
+![Fullscreen Pageshot](https://i.ibb.co/QCxLX6V/my9friends.jpg)
+
+**Frosty Navigation Bar with active links**
+![https://i.ibb.co/dBnnLGv/frostbar.gif](https://i.ibb.co/dBnnLGv/frostbar.gif)
+
+**Dynamic Testimonials Scroller**
+![Dynamic Testimonials](https://i.ibb.co/PgWBHGR/dynamic-testimonials.gif)
+
 This application serves as a platform for users to book and explore various yoga classes. 
 
 **⭐ Key Features:**
