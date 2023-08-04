@@ -1,8 +1,8 @@
-## YogaClass Booking Landing Page
+# Yoga Class Booking Landing Page
 
 Welcome to the **YogaClass Booking Landing Page**! 
 
-# Landing Page Images
+## Landing Page Images
 
 **Screenshot Fullpage**
 ![Fullscreen Pageshot](https://i.ibb.co/QCxLX6V/my9friends.jpg)
