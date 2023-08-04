@@ -21,10 +21,11 @@ This application serves as a platform for users to book and explore various yoga
 
 - **Class Availability**: Check the availability of upcoming classes and find convenient time slots that fit your schedule.
 
-
-- **Testimonials**: The app includes a testimonials section where users can read and view feedback from satisfied yoga class attendees. This feature helps build trust and credibility for the yoga classes.
+- **Dynamic Testimonials Scroller**: The landing page includes a testimonials section where users can read and view feedback from satisfied yoga class attendees. This feature helps build trust and credibility for the yoga classes.
 
 - **Contact Page**: A dedicated contact page is provided for users to get in touch with the instructor or the yoga studio. Users can fill out a contact form and submit their inquiries, providing a convenient way to reach out for further information or assistance.
+
+- **Cool Navigation**: Frosty Navigation Bar with active links which adds an additional sprinkle of modern UI.
 
 **⚙️ Dependencies:**
 
