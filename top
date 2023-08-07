@@ -1,0 +1,498 @@
+[33mcommit 122f09a4fc02a6ef39c53be68438171998fa96ef[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/update-to-v2[m[33m, [m[1;31morigin/feature/update-to-v2[m[33m)[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 31 21:23:58 2023 +0200
+
+    add ui, state management for images
+
+[33mcommit 96ee17d668f73f2ab9503ce410a3091cb28a8c90[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 31 11:06:11 2023 +0200
+
+    removed old tindasana ai
+
+[33mcommit 251c166c634aa346b5b66919eb942b0c06151706[m
+Merge: 340599c 1493abc
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 31 11:01:49 2023 +0200
+
+    Merge branch 'main' into feature/update-to-v2
+
+[33mcommit 1493abc574b85212d6e4615b8ec46bef776d5cf6[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 31 10:52:33 2023 +0200
+
+    add link hero
+
+[33mcommit 340599c9c03e620db57da233867b772e7116ac1c[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sun Jul 30 09:00:50 2023 +0200
+
+    add new UI
+
+[33mcommit 0ed329e59bd487592aef117844926f25c173f904[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sat Jul 29 13:13:50 2023 +0200
+
+    fix typo
+
+[33mcommit 8f47f95bdb8ec98a45f362e689c6007798fc04e4[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sat Jul 29 12:39:16 2023 +0200
+
+    takeout tooltip
+
+[33mcommit 1df81b20e0faf87fdc14bca1f1f3ed6620d33b1e[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sat Jul 29 12:22:33 2023 +0200
+
+    add tooltip
+
+[33mcommit cd1be0d8a58ccf96c815307cb0f18941810cd216[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jul 28 17:17:43 2023 +0200
+
+    typo
+
+[33mcommit ca71ef002da603fcd85867a3d3e705e4e35ced98[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jul 28 17:14:35 2023 +0200
+
+    add testimonial, bigger border nav
+
+[33mcommit 5d9bf6fb693234978c45c92bce8da88203d2d8d4[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jul 28 11:06:03 2023 +0200
+
+    add link to article
+
+[33mcommit 34e20c2aa094f24994b0db5a6487eb043f14b628[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jul 28 11:05:52 2023 +0200
+
+    Update footer, article, add badge to testimonials
+
+[33mcommit 3a17b8154fd2e16f4f82dcf292b629671e40f7d2[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jul 26 13:27:43 2023 +0200
+
+    takeout sticky banner
+
+[33mcommit f1f868cd60747efa049b2b5c537af2bd8f0146c9[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jul 26 13:04:06 2023 +0200
+
+    add edge function
+
+[33mcommit 545c0cff32b0ad9145428d29744154c325a6bade[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jul 26 10:20:41 2023 +0200
+
+    takeout email
+
+[33mcommit 5b92c4e561582d6d3577a529f058c2c9e78d542e[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sat Jul 22 17:48:05 2023 +0200
+
+    add tindasanaai ui and api call
+
+[33mcommit 232768c5288c00d58b517d2c5083996ea3db2b40[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sat Jul 22 13:15:51 2023 +0200
+
+    add sticky banner
+
+[33mcommit 01801c136a12fdb8b873842d2804912b1b7d88e6[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jul 21 15:46:08 2023 +0200
+
+    add new article, new hero
+
+[33mcommit c60a44d5bbe49a95128d701cfa8092d8c95a31e8[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jul 19 09:09:43 2023 +0200
+
+    add tindasanaai
+
+[33mcommit 0f01f74a1a76ac7014de9d61fccb3bd9c771a2c3[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 18:47:42 2023 +0200
+
+    delete notion component, fix syntax error
+
+[33mcommit a68f3828c7381ea5cd0447ddcec9e3e7cc39845a[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 18:40:04 2023 +0200
+
+    fix modal
+
+[33mcommit ef5294ed9f1d24909a630f0c27196a71ea244341[m
+Merge: 0964238 13dd338
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 18:33:22 2023 +0200
+
+    Merge branch 'develop'
+
+[33mcommit 13dd3381ab2657f3ff29c2e961f396d9f9fa6687[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 18:32:50 2023 +0200
+
+    finally fix modal
+
+[33mcommit 0964238713b380dec0bb4644c36a905e2d5c94f3[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 16:50:18 2023 +0200
+
+    merge develop
+
+[33mcommit 1905114242e5965e5a84440e7dd7a5c44b72d4e7[m
+Merge: 728e357 4f06f36
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 16:50:07 2023 +0200
+
+    Merge branch 'develop'
+
+[33mcommit 4f06f369418bd8af740d5cfedc9d220dfcc44f68[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 07:52:43 2023 +0200
+
+    edit NL
+
+[33mcommit d8e5e133c10523037eeca525c9303653e3456ea8[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 07:52:35 2023 +0200
+
+    edit sessions
+
+[33mcommit 8551d48ff34fd3cf0a756a1da36c9422cdaca7a3[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jul 3 07:52:22 2023 +0200
+
+    edit sequence to session, add note signup NL
+
+[33mcommit fa5a7eff56043377b9da9b1ce86ac181b8bd1161[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sat Jul 1 12:09:20 2023 +0200
+
+    add blog to navbar, sequence site
+
+[33mcommit 699faea4ce021abe7e0e03bcf1b9b1bd32c920f5[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 29 20:37:30 2023 +0200
+
+    add article 1
+
+[33mcommit e44bf3c9ddf877e1a6226c1a91cda92e42b77625[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 29 12:58:24 2023 +0200
+
+    add styling to blog page
+
+[33mcommit efbe3d67534248bd51dff3d85c7c1a500e925963[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 29 12:58:10 2023 +0200
+
+    add styling to blog page
+
+[33mcommit 0be221bba4e3c734fc17e75dcf4f451c74bc024d[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 28 10:10:49 2023 +0200
+
+    fix blogpost type error
+
+[33mcommit bfc4cd3f71c626cb8e346c09e0f9fb8876b80bef[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 28 08:58:22 2023 +0200
+
+    add styling to blog cards
+
+[33mcommit 8babd98fc563953b6db4dc1eab40fa954e821bed[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 22 12:44:30 2023 +0200
+
+    add test-blog
+
+[33mcommit 728e357061783fe240da522ea65aa60e8457a3b2[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 21 14:52:56 2023 +0200
+
+    little clean up
+
+[33mcommit 70e2511f78e1b642743e8d003ff51b44c7c10df0[m
+Merge: 7b7b5f2 44c0425
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue Jun 20 18:23:18 2023 +0200
+
+    Merge branch 'develop'
+
+[33mcommit 44c04256e33ddbc76d23bb7c6c7e5279ff422482[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue Jun 20 18:22:58 2023 +0200
+
+    ad classpass icon, edit faq
+
+[33mcommit 7b7b5f2ae1f63e6d8407e23717e188c98f95e79f[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue Jun 20 11:03:37 2023 +0200
+
+    fix modal bug
+
+[33mcommit 7414512824a6bcc33eec300ff819019d73e19638[m
+Merge: 77bb9e5 2154d8e
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 16 12:43:06 2023 +0200
+
+    Merge branch 'develop'
+
+[33mcommit 2154d8e0389045055e865c13085ed21ac6ebfc5b[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 16 12:39:01 2023 +0200
+
+    fix position modal
+
+[33mcommit 6ce5cbd5a5027945d145df95d23cbe0d6185d6ad[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 16 11:44:22 2023 +0200
+
+    make modal smaller, center
+
+[33mcommit 3722e8cff22083e0c8ac58dd958103a8f4e2a074[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 14 10:46:36 2023 +0200
+
+    bug modal
+
+[33mcommit a41e009db86cb105a1cbaa40cb8fce0e1b6bbc05[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 14 10:43:14 2023 +0200
+
+    bug modal not working
+
+[33mcommit 77bb9e5ac1ffa2a0d3d2b6f819f42d689bd74ee0[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue Jun 13 18:27:14 2023 +0200
+
+    fix typo faq
+
+[33mcommit be72fc6c9ce5428e265c86a6a746e01282360dc2[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue Jun 13 15:33:47 2023 +0200
+
+    update FAQ
+
+[33mcommit 7a28668a92929c1cb548db739f8b22ac616732a8[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue Jun 13 11:47:23 2023 +0200
+
+    fix card bug
+
+[33mcommit 8a1073a12c4287e08c386503acba363d4a62f898[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jun 12 23:23:36 2023 +0200
+
+    add get directions links
+
+[33mcommit 18a61dfd36b345293b80d73b2e9e8f24b825598d[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jun 12 07:31:51 2023 +0200
+
+    fix mobile nav, add modal component
+
+[33mcommit bb31955d81729bf84c54f28620fe710e472a4060[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 9 16:10:13 2023 +0200
+
+    change modal size
+
+[33mcommit ad6bc4e0128814dbd1aa94bc9baab8b0c853bf9f[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 9 16:07:00 2023 +0200
+
+    add booking cards, modal in nav cta
+
+[33mcommit 42e6dc2606cb7a031a1a82004b4fc0238ab93cd1[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 9 12:45:52 2023 +0200
+
+    delete file
+
+[33mcommit 828425f5c80af3c9d0a32411a0afde0adf579dbb[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 9 12:40:51 2023 +0200
+
+    add testimonial, edit faq
+
+[33mcommit 99beaab74836312eb9373090d5e855c011a00803[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 8 10:49:38 2023 +0200
+
+    new hero cta, edit about
+
+[33mcommit 56a7646e36dd1e05a5b6b046fad259d89259d881[m
+Merge: b8eaf03 be73bc7
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 7 08:08:09 2023 +0200
+
+    Merge branch 'main' of github.com:futurefounder/9friends
+
+[33mcommit b8eaf03c7d40f044a2a37f38410fd34e3019421a[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed Jun 7 08:08:05 2023 +0200
+
+    add testimonials
+
+[33mcommit be73bc7c75e1262533967e6fa49aece2171bd376[m
+Author: Jesse <47643039+futurefounder@users.noreply.github.com>
+Date:   Tue Jun 6 13:31:51 2023 +0200
+
+    Update README.md
+
+[33mcommit 030827dc418da0d059558632d3cc701a82cc16a7[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jun 5 16:03:20 2023 +0200
+
+    add pic testimonial, fix testimonial bug
+
+[33mcommit 1a366bf18c5443767af343d26a8309ff68baf03f[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jun 5 09:25:58 2023 +0200
+
+    fix typo in testimonials
+
+[33mcommit 3399ab88187afcef22568a11258272594d0652b7[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Mon Jun 5 09:22:46 2023 +0200
+
+    Update about, add new footer, testimonials, imprint, privacy
+
+[33mcommit f30a4638e4762777a3f6a50d9e781e1c6d2dee8c[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri Jun 2 13:19:45 2023 +0200
+
+    fix active links in nav not working
+
+[33mcommit 4c6f5320e78674be1c6902f0b520a4cf419cf2dd[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 1 09:01:29 2023 +0200
+
+    fix bug
+
+[33mcommit d5c425370d7e78b770f271dc7cfe5199033be862[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu Jun 1 08:48:18 2023 +0200
+
+    add new nav cta, frosted scroll, update about, faq
+
+[33mcommit c578f8ed50a10581220646c61b1d796caac8d28d[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue May 30 19:48:53 2023 +0200
+
+    fix type error
+
+[33mcommit f6ec78177fce0616babe53903404cdba65d53bc8[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue May 30 19:45:55 2023 +0200
+
+    added form
+
+[33mcommit 0dd80f69495a4239c33e20a79dab28c42481ac9c[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Tue May 30 15:41:11 2023 +0200
+
+    update FAQ
+
+[33mcommit 2078798306858d7c11a87a0c83487f1c94a0ddfe[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sun May 21 15:00:48 2023 +0200
+
+    add new file structure, benefits, faq, about
+
+[33mcommit d7ec893b8ae2ca3bf5e7c03d6b27da63e63bdb81[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed May 17 11:59:45 2023 +0200
+
+    vercel analytics with correct integration
+
+[33mcommit edd20a685c679ff2c03283f461b2bfa23636269a[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Sun May 14 11:41:42 2023 +0200
+
+    add vercell analytics
+
+[33mcommit 8f13a018cb559b5c02e38b0ab89dfb79cb4e3ab6[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri May 12 12:03:52 2023 +0200
+
+    fix build issues
+
+[33mcommit 0c2f1b4bad9790f5f15df9b69bdfd2b8679c2f89[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri May 12 10:45:11 2023 +0200
+
+    build 2
+
+[33mcommit 5905224153da64dd6c3204d265bf29941a5fc212[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri May 12 10:41:36 2023 +0200
+
+    build
+
+[33mcommit 803e48af1af104a1b2dff6cdfb15c59b5c7574d6[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Fri May 12 10:18:41 2023 +0200
+
+    add footer, soon
+
+[33mcommit 97bad3e31d5203cb266c5356a62302fddda82857[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu May 11 17:49:39 2023 +0200
+
+    add favicon, animated icon
+
+[33mcommit 89090862b7abbe6139cc7b30ce7f3a684fda8824[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu May 11 15:39:29 2023 +0200
+
+    add calendar
+
+[33mcommit f67c0118af3e69ab535f67779ad0501e5549e143[m
+Merge: 5be78b4 aced1b4
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu May 11 15:20:28 2023 +0200
+
+    Merge branch 'main' of github.com:futurefounder/9friends
+
+[33mcommit 5be78b443a055930e943af133b8300ea3b8b7ce7[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu May 11 15:20:19 2023 +0200
+
+    adjust nav and hero text
+
+[33mcommit 5dbc077c7eba8af0c8a1ed88d6be776e31272941[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu May 11 14:46:43 2023 +0200
+
+    add nav first draft
+
+[33mcommit a36a56e26c74973bd6b974543e95a4016654dde1[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Thu May 11 10:37:34 2023 +0200
+
+    fixed tailwind config
+
+[33mcommit aced1b43fb7ca0c55b5ded9e76f4d94fbed70af3[m
+Author: Jesse <47643039+futurefounder@users.noreply.github.com>
+Date:   Wed May 10 20:01:13 2023 +0200
+
+    Update README.md
+
+[33mcommit 3d52b5f58d70e8454fcc78151fb3b4101b87a3a7[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed May 10 20:00:18 2023 +0200
+
+    first commit
+
+[33mcommit 58176325808e4eedadac1c635b52e3e3be9037ba[m
+Author: futurefounder <jsk@posteo.de>
+Date:   Wed May 10 19:38:18 2023 +0200
+
+    Initial commit from Create Next App

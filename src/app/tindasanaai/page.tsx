@@ -5,7 +5,35 @@ import Image from "next/image";
 import TindasanaAIHeader from "../components/TindasanaAIHeader";
 import Footer from "../components/Footer";
 
-export default function TindasaAI() {
+interface TindasaAIProps {
+  stage: number;
+  setStage: React.Dispatch<React.SetStateAction<number>>;
+  handleImageClick: (selection: string) => void;
+  selectedSequenceOptions: {
+    theme_chakras: boolean;
+    theme_season: boolean;
+    theme_spirituality: boolean;
+    theme_moon: boolean;
+    style_power: boolean;
+    style_hatha: boolean;
+    style_vinyasa: boolean;
+    style_yin: boolean;
+    level_beginner: boolean;
+    level_intermediate: boolean;
+    level_advanced: boolean;
+    level_mixed: boolean;
+    [key: string]: boolean;
+  };
+  startAgain: () => void;
+}
+
+function TindasaAI({
+  stage,
+  setStage,
+  handleImageClick,
+  selectedSequenceOptions,
+  startAgain,
+}: TindasaAIProps) {
   const imgWidthSize = 150;
   const imgHeightSize = 150;
 
@@ -13,13 +41,6 @@ export default function TindasaAI() {
 
   const buttonNextStyle =
     "text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2";
-
-  const [stage, setStage] = useState(0);
-  const [selections, setSelections] = useState({
-    theme: "",
-    style: "",
-    level: "",
-  });
 
   const proceedToNextStage = () => {
     setStage((prevStage) => prevStage + 1);
@@ -29,22 +50,18 @@ export default function TindasaAI() {
     setStage((prevStage) => (prevStage > 0 ? prevStage - 1 : prevStage));
   };
 
-  const startAgain = () => {
-    setStage(0);
-  };
-
-  const setSelection = (category, selection) => {
-    setSelections((prevSelections) => ({
-      ...prevSelections,
-      [category]: selection,
-    }));
-  };
+  // const setSelection = (category, selection) => {
+  //   setSelections((prevSelections) => ({
+  //     ...prevSelections,
+  //     [category]: selection,
+  //   }));
+  // };
 
   function BackForwardButtons() {
     return (
       <>
         {" "}
-        <div className="mt-4 mb-3 flex flex-row">
+        <div className="flex flex-row mt-4 mb-3">
           <button
             className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             onClick={goBack}
@@ -131,58 +148,10 @@ export default function TindasaAI() {
   //   }
   // }, [stage]);
 
-  const [selectedSequenceOptions, setSelectedSequenceOptions] = useState({
-    theme_chakras: false,
-    theme_season: false,
-    theme_spirituality: false,
-    theme_moon: false,
-    style_power: false,
-    style_hatha: false,
-    style_vinyasa: false,
-    style_yin: false,
-    level_beginner: false,
-    level_intermediate: false,
-    level_advanced: false,
-    level_mixed: false,
-  });
-
-  const selectionMapping = {
-    Chakras: "theme_chakras",
-    Seasons: "theme_season",
-    Spirituality: "theme_spirituality",
-    "Moon Cycle": "theme_moon",
-    Power: "style_power",
-    Hatha: "style_hatha",
-    Vinyasa: "style_vinyasa",
-    Yin: "style_yin",
-    Beginner: "level_beginner",
-    Intermediate: "level_intermediate",
-    Advanced: "level_advanced",
-    Mixed: "level_mixed",
-  };
-
-  const handleImageClick = (selection, event) => {
-    setSelectedSequenceOptions((prevOptions) => {
-      const newSelection = !prevOptions[selectionMapping[selection]];
-      if (newSelection) {
-        event.target.style.opacity = 1; 
-        event.target.style.border = "4px solid #a855f7"; 
-      } else {
-        event.target.style.opacity = 0.5; 
-        event.target.style.border = "none"; 
-      }
-      return {
-        ...prevOptions,
-        [selectionMapping[selection]]: newSelection,
-      };
-    });
-  };
-
   switch (stage) {
     case 0:
       return (
         <>
-          {console.log(JSON.stringify(selectedSequenceOptions, 0, 2))}
           <TindasanaAIHeader />
           <div className="flex flex-col items-center justify-center text-center">
             <Image
@@ -205,15 +174,14 @@ export default function TindasaAI() {
     case 1:
       return (
         <>
-          {console.log(JSON.stringify(selectedSequenceOptions, 0, 2))}
           <TindasanaAIHeader />
-          <div className="mt-10 flex flex-col items-center justify-center text-center">
-            <span className="font-bold text-3xl text-gray-800">
+          <div className="flex flex-col items-center justify-center mt-10 text-center">
+            <span className="text-3xl font-bold text-gray-800">
               {" "}
               Pick One Or More Themes{" "}
             </span>
             <br />
-            <div className="m-6 grid grid-cols-2 grid-rows-1 gap-4">
+            <div className="grid grid-cols-2 grid-rows-1 gap-4 m-6">
               <div className="">
                 {" "}
                 <Image
@@ -221,12 +189,14 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   className={`rounded-full hover:scale-105 mb-2 ${
-                    selectedSequenceOptions[options[0].title]
-                      ? "opacity-100"
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[0]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
                       : "opacity-50"
                   }`}
                   alt={options[0].title}
-                  onClick={(event) => handleImageClick(options[0].title, event)}
+                  onClick={() => handleImageClick(options[0].title)}
                 />
                 <span className="font-semibold">{options[0].title}</span>
               </div>
@@ -238,11 +208,13 @@ export default function TindasaAI() {
                   height={imgHeightSize}
                   alt={options[1].title}
                   className={`rounded-full hover:scale-105 mb-2 ${
-                    selectedSequenceOptions[options[1].title]
-                      ? "opacity-100"
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[1]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
                       : "opacity-50"
                   }`}
-                  onClick={(event) => handleImageClick(options[1].title, event)}
+                  onClick={(event) => handleImageClick(options[1].title)}
                 />
                 <span className="font-semibold">{options[1].title}</span>
               </div>
@@ -254,11 +226,13 @@ export default function TindasaAI() {
                   height={imgHeightSize}
                   alt={options[2].title}
                   className={`rounded-full hover:scale-105 mb-2 ${
-                    selectedSequenceOptions[options[2].title]
-                      ? "opacity-100"
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[2]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
                       : "opacity-50"
                   }`}
-                  onClick={(event) => handleImageClick(options[2].title, event)}
+                  onClick={(event) => handleImageClick(options[2].title)}
                 />
                 <span className="font-semibold">{options[2].title}</span>
               </div>
@@ -270,11 +244,13 @@ export default function TindasaAI() {
                   height={imgHeightSize}
                   alt={options[3].title}
                   className={`rounded-full hover:scale-105 mb-2 ${
-                    selectedSequenceOptions[options[3].title]
-                      ? "opacity-100"
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[3]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
                       : "opacity-50"
                   }`}
-                  onClick={(event) => handleImageClick(options[3].title, event)}
+                  onClick={(event) => handleImageClick(options[3].title)}
                 />
                 <span className="font-semibold">{options[3].title}</span>
               </div>
@@ -289,15 +265,14 @@ export default function TindasaAI() {
       return (
         <>
           <div>
-            {console.log(JSON.stringify(selectedSequenceOptions, 0, 2))}
             <TindasanaAIHeader />
-            <div className="mt-10 flex flex-col items-center justify-center text-center">
-              <span className="font-bold text-3xl text-gray-800">
+            <div className="flex flex-col items-center justify-center mt-10 text-center">
+              <span className="text-3xl font-bold text-gray-800">
                 {" "}
                 Select Your Style{" "}
               </span>
               <br />
-              <div className="m-6 grid grid-cols-2 grid-rows-1 gap-4">
+              <div className="grid grid-cols-2 grid-rows-1 gap-4 m-6">
                 <div className="">
                   <Image
                     src={options[4].image}
@@ -305,13 +280,13 @@ export default function TindasaAI() {
                     height={imgHeightSize}
                     alt={options[4].title}
                     className={`rounded-full hover:scale-105 mb-2 ${
-                      selectedSequenceOptions[options[4].title]
-                        ? "opacity-100"
+                      selectedSequenceOptions[
+                        Object.keys(selectedSequenceOptions)[4]
+                      ]
+                        ? "opacity-100 ring-4 ring-purple-500"
                         : "opacity-50"
                     }`}
-                    onClick={(event) =>
-                      handleImageClick(options[4].title, event)
-                    }
+                    onClick={(event) => handleImageClick(options[4].title)}
                   />{" "}
                   <span className="font-semibold">{options[4].title}</span>
                 </div>
@@ -322,13 +297,13 @@ export default function TindasaAI() {
                     height={imgHeightSize}
                     alt={options[5].title}
                     className={`rounded-full hover:scale-105 mb-2 ${
-                      selectedSequenceOptions[options[5].title]
-                        ? "opacity-100"
+                      selectedSequenceOptions[
+                        Object.keys(selectedSequenceOptions)[5]
+                      ]
+                        ? "opacity-100 ring-4 ring-purple-500"
                         : "opacity-50"
                     }`}
-                    onClick={(event) =>
-                      handleImageClick(options[5].title, event)
-                    }
+                    onClick={(event) => handleImageClick(options[5].title)}
                   />{" "}
                   <span className="font-semibold">{options[5].title}</span>
                 </div>
@@ -339,13 +314,13 @@ export default function TindasaAI() {
                     height={imgHeightSize}
                     alt={options[6].title}
                     className={`rounded-full hover:scale-105 mb-2 ${
-                      selectedSequenceOptions[options[3].title]
-                        ? "opacity-100"
+                      selectedSequenceOptions[
+                        Object.keys(selectedSequenceOptions)[6]
+                      ]
+                        ? "opacity-100 ring-4 ring-purple-500"
                         : "opacity-50"
                     }`}
-                    onClick={(event) =>
-                      handleImageClick(options[6].title, event)
-                    }
+                    onClick={(event) => handleImageClick(options[6].title)}
                   />{" "}
                   <span className="font-semibold">{options[6].title}</span>
                 </div>
@@ -356,13 +331,13 @@ export default function TindasaAI() {
                     height={imgHeightSize}
                     alt={options[7].title}
                     className={`rounded-full hover:scale-105 mb-2 ${
-                      selectedSequenceOptions[options[7].title]
-                        ? "opacity-100"
+                      selectedSequenceOptions[
+                        Object.keys(selectedSequenceOptions)[7]
+                      ]
+                        ? "opacity-100 ring-4 ring-purple-500"
                         : "opacity-50"
                     }`}
-                    onClick={(event) =>
-                      handleImageClick(options[7].title, event)
-                    }
+                    onClick={(event) => handleImageClick(options[7].title)}
                   />{" "}
                   <span className="font-semibold">{options[7].title}</span>
                 </div>
@@ -378,22 +353,27 @@ export default function TindasaAI() {
       return (
         <>
           <TindasanaAIHeader />
-          {console.log(JSON.stringify(selectedSequenceOptions, 0, 2))}
-          <div className="mt-10 flex flex-col items-center justify-center text-center">
-            <span className="font-bold text-3xl text-gray-800">
+          <div className="flex flex-col items-center justify-center mt-10 text-center">
+            <span className="text-3xl font-bold text-gray-800">
               {" "}
               Choose Your Level
             </span>
             <br />
-            <div className="m-6 grid grid-cols-2 grid-rows-1 gap-4">
+            <div className="grid grid-cols-2 grid-rows-1 gap-4 m-6">
               <div className="">
                 <Image
                   src={options[8].image}
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[8].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[8].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[8]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[8].title)}
                 />{" "}
                 <span className="font-semibold">{options[8].title}</span>
               </div>
@@ -403,8 +383,14 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[9].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[9].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[9]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[9].title)}
                 />{" "}
                 <span className="font-semibold">{options[9].title}</span>
               </div>
@@ -414,8 +400,14 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[10].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[10].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[10]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[10].title)}
                 />{" "}
                 <span className="font-semibold">{options[10].title}</span>
               </div>
@@ -425,8 +417,14 @@ export default function TindasaAI() {
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[11].title}
-                  className="rounded-full hover:scale-105 mb-2"
-                  onClick={() => handleImageClick(options[11].title)}
+                  className={`rounded-full hover:scale-105 mb-2 ${
+                    selectedSequenceOptions[
+                      Object.keys(selectedSequenceOptions)[11]
+                    ]
+                      ? "opacity-100 ring-4 ring-purple-500"
+                      : "opacity-50"
+                  }`}
+                  onClick={(event) => handleImageClick(options[11].title)}
                 />{" "}
                 <span className="font-semibold">{options[11].title}</span>
               </div>
@@ -441,10 +439,9 @@ export default function TindasaAI() {
       return (
         <>
           <TindasanaAIHeader />
-
           {isDone ? (
-            <div className="mt-10 flex flex-col items-center justify-center text-center">
-              <span className="font-bold text-3xl text-gray-800"> Result</span>
+            <div className="flex flex-col items-center justify-center mt-10 text-center">
+              <span className="text-3xl font-bold text-gray-800"> Result</span>
               <br />
               <button
                 className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
@@ -456,7 +453,7 @@ export default function TindasaAI() {
           ) : (
             <div
               role="status"
-              className="mt-12 mb-12 flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center mt-12 mb-12"
             >
               <span className="mb-6 text-xl font-bold text-gray-400">
                 🪄 Manifesting your unique yoga flow... <br />
@@ -487,7 +484,6 @@ export default function TindasaAI() {
               </button>{" "}
             </div>
           )}
-
           <br />
           <Footer />
         </>
@@ -497,3 +493,74 @@ export default function TindasaAI() {
       return null;
   }
 }
+// Wrapper component to save state across renders
+function TindasanaAIWrapper() {
+  const [stage, setStage] = useState(0);
+
+  const [selectedSequenceOptions, setSelectedSequenceOptions] = useState({
+    theme_chakras: false,
+    theme_season: false,
+    theme_spirituality: false,
+    theme_moon: false,
+    style_power: false,
+    style_hatha: false,
+    style_vinyasa: false,
+    style_yin: false,
+    level_beginner: false,
+    level_intermediate: false,
+    level_advanced: false,
+    level_mixed: false,
+  });
+
+  const selectionMapping = {
+    Chakras: "theme_chakras",
+    Seasons: "theme_season",
+    Spirituality: "theme_spirituality",
+    "Moon Cycle": "theme_moon",
+    Power: "style_power",
+    Hatha: "style_hatha",
+    Vinyasa: "style_vinyasa",
+    Yin: "style_yin",
+    Beginner: "level_beginner",
+    Intermediate: "level_intermediate",
+    Advanced: "level_advanced",
+    Mixed: "level_mixed",
+  };
+
+  const handleImageClick = (selection: string) => {
+    setSelectedSequenceOptions((prevOptions) => {
+      // @ts-ignore
+      const newSelection = !prevOptions[selectionMapping[selection]];
+      return {
+        ...prevOptions,
+        // @ts-ignore
+        [selectionMapping[selection]]: newSelection,
+      };
+    });
+  };
+
+  const startAgain = () => {
+    setStage(0);
+    // Reset all options to false
+    setSelectedSequenceOptions((prevOptions) => {
+      let newOptions = { ...prevOptions };
+      for (let key in newOptions) {
+        // @ts-ignore
+        newOptions[key] = false;
+      }
+      return newOptions;
+    });
+  };
+
+  return (
+    <TindasaAI
+      handleImageClick={handleImageClick}
+      selectedSequenceOptions={selectedSequenceOptions}
+      startAgain={startAgain}
+      stage={stage}
+      setStage={setStage}
+    />
+  );
+}
+
+export default TindasanaAIWrapper;
