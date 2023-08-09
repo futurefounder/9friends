@@ -18,6 +18,9 @@ module.exports = {
       animation: {
         text: "text 4s ease infinite",
       },
+      minHeight: {
+        400: "400px",
+      },
       keyframes: {
         text: {
           "0%, 100%": {

@@ -4,6 +4,15 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import TindasanaAIHeader from "../components/TindasanaAIHeader";
 import Footer from "../components/Footer";
+import Script from "next/script";
+
+interface Choice {
+  text: string;
+}
+
+interface ApiResponse {
+  choices: Choice[];
+}
 
 interface TindasaAIProps {
   stage: number;
@@ -25,6 +34,10 @@ interface TindasaAIProps {
     [key: string]: boolean;
   };
   startAgain: () => void;
+  isDone: boolean;
+  setIsDone: React.Dispatch<React.SetStateAction<boolean>>;
+  apiResponse: ApiResponse | null;
+  setApiResponse: React.Dispatch<React.SetStateAction<ApiResponse | null>>;
 }
 
 function TindasaAI({
@@ -33,11 +46,13 @@ function TindasaAI({
   handleImageClick,
   selectedSequenceOptions,
   startAgain,
+  isDone,
+  setIsDone,
+  apiResponse,
+  setApiResponse,
 }: TindasaAIProps) {
   const imgWidthSize = 150;
   const imgHeightSize = 150;
-
-  const [isDone, setIsDone] = useState(false);
 
   const buttonNextStyle =
     "text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2";
@@ -72,6 +87,19 @@ function TindasaAI({
             Next
           </button>
         </div>
+      </>
+    );
+  }
+
+  function StartOverButton() {
+    return (
+      <>
+        <button
+          className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          onClick={startAgain}
+        >
+          Start Over
+        </button>
       </>
     );
   }
@@ -140,20 +168,20 @@ function TindasaAI({
     },
   };
 
-  // useEffect(() => {
-  //   if (stage === 4) {
-  //     setIsDone(true);
-  //   } else {
-  //     setIsDone(false);
-  //   }
-  // }, [stage]);
+  useEffect(() => {
+    if (stage === 4) {
+      setIsDone(true);
+    } else {
+      setIsDone(false);
+    }
+  }, [stage]);
 
   switch (stage) {
     case 0:
       return (
         <>
           <TindasanaAIHeader />
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center min-h-full mt-10 mb-10 text-center">
             <Image
               src="/images/meditate-nobg.png"
               width="300"
@@ -175,19 +203,20 @@ function TindasaAI({
       return (
         <>
           <TindasanaAIHeader />
-          <div className="flex flex-col items-center justify-center mt-10 text-center">
-            <span className="text-3xl font-bold text-gray-800">
+          <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
+            <span className="text-2xl font-bold text-gray-800 md:text-3xl">
               {" "}
               Pick One Or More Themes{" "}
             </span>
             <br />
-            <div className="grid grid-cols-2 grid-rows-1 gap-4 m-6">
+            <div className="grid min-h-full grid-cols-2 grid-rows-1 gap-4 m-4">
               <div className="">
                 {" "}
                 <Image
                   src={options[0].image}
                   width={imgWidthSize}
                   height={imgHeightSize}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[0]
@@ -207,6 +236,7 @@ function TindasaAI({
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[1].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[1]
@@ -225,6 +255,7 @@ function TindasaAI({
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[2].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[2]
@@ -243,6 +274,7 @@ function TindasaAI({
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[3].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[3]
@@ -266,19 +298,20 @@ function TindasaAI({
         <>
           <div>
             <TindasanaAIHeader />
-            <div className="flex flex-col items-center justify-center mt-10 text-center">
-              <span className="text-3xl font-bold text-gray-800">
+            <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
+              <span className="text-2xl font-bold text-gray-800 md:text-3xl">
                 {" "}
                 Select Your Style{" "}
               </span>
               <br />
-              <div className="grid grid-cols-2 grid-rows-1 gap-4 m-6">
+              <div className="grid min-h-full grid-cols-2 grid-rows-1 gap-4 m-4">
                 <div className="">
                   <Image
                     src={options[4].image}
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[4].title}
+                    priority={true}
                     className={`rounded-full hover:scale-105 mb-2 ${
                       selectedSequenceOptions[
                         Object.keys(selectedSequenceOptions)[4]
@@ -296,6 +329,7 @@ function TindasaAI({
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[5].title}
+                    priority={true}
                     className={`rounded-full hover:scale-105 mb-2 ${
                       selectedSequenceOptions[
                         Object.keys(selectedSequenceOptions)[5]
@@ -313,6 +347,7 @@ function TindasaAI({
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[6].title}
+                    priority={true}
                     className={`rounded-full hover:scale-105 mb-2 ${
                       selectedSequenceOptions[
                         Object.keys(selectedSequenceOptions)[6]
@@ -330,6 +365,7 @@ function TindasaAI({
                     width={imgWidthSize}
                     height={imgHeightSize}
                     alt={options[7].title}
+                    priority={true}
                     className={`rounded-full hover:scale-105 mb-2 ${
                       selectedSequenceOptions[
                         Object.keys(selectedSequenceOptions)[7]
@@ -353,19 +389,20 @@ function TindasaAI({
       return (
         <>
           <TindasanaAIHeader />
-          <div className="flex flex-col items-center justify-center mt-10 text-center">
-            <span className="text-3xl font-bold text-gray-800">
+          <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
+            <span className="text-2xl font-bold text-gray-800 md:text-3xl">
               {" "}
               Choose Your Level
             </span>
             <br />
-            <div className="grid grid-cols-2 grid-rows-1 gap-4 m-6">
+            <div className="grid min-h-full grid-cols-2 grid-rows-1 gap-4 m-4">
               <div className="">
                 <Image
                   src={options[8].image}
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[8].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[8]
@@ -383,6 +420,7 @@ function TindasaAI({
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[9].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[9]
@@ -400,6 +438,7 @@ function TindasaAI({
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[10].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[10]
@@ -417,6 +456,7 @@ function TindasaAI({
                   width={imgWidthSize}
                   height={imgHeightSize}
                   alt={options[11].title}
+                  priority={true}
                   className={`rounded-full hover:scale-105 mb-2 ${
                     selectedSequenceOptions[
                       Object.keys(selectedSequenceOptions)[11]
@@ -440,49 +480,63 @@ function TindasaAI({
         <>
           <TindasanaAIHeader />
           {isDone ? (
-            <div className="flex flex-col items-center justify-center mt-10 text-center">
-              <span className="text-3xl font-bold text-gray-800"> Result</span>
-              <br />
-              <button
-                className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                onClick={startAgain}
-              >
-                Start Over
-              </button>{" "}
-            </div>
+            <>
+              {(apiResponse as any)?.choices?.[0]?.text ? (
+                <>
+                  <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
+                    <span className="text-2xl font-bold text-gray-800 md:text-3xl">
+                      🔮 Your Sequence
+                    </span>
+                    <br />
+                    <div className="w-96 mb-8 overflow-auto font-sans text-base p-4 text-center text-gray-700 whitespace-pre-wrap border border-gray-300 h-96">
+                      {(apiResponse as any).choices[0].text}
+                    </div>
+                    <Script
+                      id="emojicom"
+                      src="https://cdn.emojicom.io/embed/widget.js"
+                      strategy="afterInteractive"
+                    />
+                    <Script id="emojicom-inline">{`window.emojicom_widget = { campaign: "0fWxQtJEFYSeB9Do6sY7" }`}</Script>
+                    <div id="emojicom-widget-inline"></div>
+                    <br />
+                    <br />
+                    <StartOverButton />
+                  </div>{" "}
+                </>
+              ) : (
+                <div
+                  role="status"
+                  className="flex flex-col mt-12 mb-12 items-center text-center justify-center"
+                >
+                  <span className="text-xl font-bold text-gray-400">
+                    🪄 Manifesting your unique yoga flow... <br />
+                    please float in patience for a few mindful moments! <br />{" "}
+                    (this might take up to 20 seconds)
+                  </span>
+                  <br />
+                  <br />
+                  <svg
+                    aria-hidden="true"
+                    className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-violet-500"
+                    viewBox="0 0 100 101"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                      fill="currentFill"
+                    />
+                  </svg>
+                  <span className="sr-only">Loading...</span>
+                </div>
+              )}
+            </>
           ) : (
-            <div
-              role="status"
-              className="flex flex-col items-center justify-center mt-12 mb-12"
-            >
-              <span className="mb-6 text-xl font-bold text-gray-400">
-                🪄 Manifesting your unique yoga flow... <br />
-                please float in patience for a some seconds... <br />
-              </span>
-              <svg
-                aria-hidden="true"
-                className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-violet-500"
-                viewBox="0 0 100 101"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                  fill="currentFill"
-                />
-              </svg>
-              <span className="sr-only">Loading...</span> <br />
-              <button
-                className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                onClick={startAgain}
-              >
-                Start Over
-              </button>{" "}
-            </div>
+            <>Loading</>
           )}
           <br />
           <Footer />
@@ -496,6 +550,33 @@ function TindasaAI({
 // Wrapper component to save state across renders
 function TindasanaAIWrapper() {
   const [stage, setStage] = useState(0);
+  const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+  const [isDone, setIsDone] = useState(false);
+
+  const fetchAPI = async () => {
+    try {
+      const response = await fetch("/api/myapi", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          selectedSequenceOptions,
+        }),
+      });
+
+      const data = await response.json();
+      setApiResponse(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (isDone) {
+      fetchAPI();
+    }
+  }, [isDone]);
 
   const [selectedSequenceOptions, setSelectedSequenceOptions] = useState({
     theme_chakras: false,
@@ -540,16 +621,10 @@ function TindasanaAIWrapper() {
   };
 
   const startAgain = () => {
-    setStage(0);
-    // Reset all options to false
-    setSelectedSequenceOptions((prevOptions) => {
-      let newOptions = { ...prevOptions };
-      for (let key in newOptions) {
-        // @ts-ignore
-        newOptions[key] = false;
-      }
-      return newOptions;
-    });
+    const userConfirmation = window.confirm("Reloading app. Are you sure?");
+    if (userConfirmation) {
+      window.location.reload();
+    }
   };
 
   return (
@@ -559,6 +634,10 @@ function TindasanaAIWrapper() {
       startAgain={startAgain}
       stage={stage}
       setStage={setStage}
+      isDone={isDone}
+      setIsDone={setIsDone}
+      apiResponse={apiResponse}
+      setApiResponse={setApiResponse}
     />
   );
 }
