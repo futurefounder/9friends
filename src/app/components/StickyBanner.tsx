@@ -1,4 +1,7 @@
+"use client";
+
 import { useState } from "react";
+import Link from "next/link";
 
 const StickyBanner = () => {
   // State to track whether the banner should be visible or not
@@ -34,8 +37,14 @@ const StickyBanner = () => {
             <span className="sr-only">Light bulb</span>
           </span>
           <span>
-            We are having an issue with the booking layer not closing, we are
-            working on it. Just reload the page and you are good to go 😊
+            Checkout the new{" "}
+            <Link
+              className="font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse"
+              href="/tindasanaai"
+            >
+              AI Yoga Class Generator (beta)
+            </Link>{" "}
+            😊
           </span>
         </p>
       </div>

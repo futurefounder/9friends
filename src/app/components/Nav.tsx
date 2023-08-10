@@ -105,6 +105,19 @@ export default function Navigation() {
             <li>
               {" "}
               <Link
+                href="/tindasanaai"
+                className={
+                  pathname == "/tindasanaai"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : "block py-2 pl-3 pr-4 font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
+              >
+                AI Yoga Class (beta){" "}
+              </Link>{" "}
+            </li>
+            <li>
+              {" "}
+              <Link
                 href="/blog"
                 className={
                   pathname == "/blog"

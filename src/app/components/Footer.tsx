@@ -407,7 +407,7 @@ const Footer = () => {
               <ul className="flex flex-wrap justify-start gap-4 text-xs lg:justify-end">
                 <li>
                   <Link
-                    href="/Home"
+                    href="/"
                     className="text-gray-500 transition hover:opacity-75"
                   >
                     Home
