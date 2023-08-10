@@ -10,20 +10,21 @@ import React from "react";
 import Link from "next/link";
 import BookingCards from "./components/BookingCards";
 import DefaultNavbar from "./components/DefaultNavbar";
+import StickyBanner from "./components/StickyBanner";
 
 export default function Home() {
   return (
     <div>
-      {/* <DefaultNavbar /> */}
-
-      <Navigation />
-      <Hero />
-      <BookingCards />
-      {/* <BookingCal /> */}
-      <Benefits />
-      <Testimonials />
-      <FAQ />
-      <Footer />
+      <div>
+        <Navigation />
+        <Hero />
+        <Testimonials />
+        {/* <BookingCards /> */}
+        <StickyBanner />
+        <Benefits />
+        <FAQ />
+        <Footer />
+      </div>
     </div>
   );
 }

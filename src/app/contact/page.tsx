@@ -67,7 +67,12 @@ function Contact() {
           </h1>
 
           <p className="mt-4 text-gray-500 dark:text-gray-400">
-            Any questions regarding 9Friends?
+            Any questions regarding 9Friends? <br />
+            <span className="text-gray-500 font-light text-base">
+              {" "}
+              (Marketing and any non-9Friends related topics will be ignored,
+              thanks for your understanding).{" "}
+            </span>
           </p>
 
           <div className="mt-6 md:mt-8">

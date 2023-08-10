@@ -407,6 +407,30 @@ const Footer = () => {
               <ul className="flex flex-wrap justify-start gap-4 text-xs lg:justify-end">
                 <li>
                   <Link
+                    href="/"
+                    className="text-gray-500 transition hover:opacity-75"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-gray-500 transition hover:opacity-75"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-gray-500 transition hover:opacity-75"
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/privacy"
                     className="text-gray-500 transition hover:opacity-75"
                   >

@@ -25,7 +25,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 h-16 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
+    <nav className="sticky top-0 z-50 h-18 border-b border-gray-200 bg-white/50 backdrop-blur dark:bg-gray-100">
       <Head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js" />
       </Head>
@@ -42,14 +42,6 @@ export default function Navigation() {
           </span>
         </Link>{" "}
         <div className="flex md:order-2">
-          {" "}
-          {/* <button
-            type="button"
-            className="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-fuchsia-700 focus:ring-4 focus:outline-none focus:ring-purple-300 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-            data-cal-link="hi-jesse/9friends-yoga-fhain"
-          >
-            Book Now{" "}
-          </button> */}
           <MyModal />
           <button
             onClick={toggleNavbar}
@@ -86,7 +78,6 @@ export default function Navigation() {
           {/* Navigation Elements */}
           <ul className="flex flex-col p-4 mt-4 font-medium text-center border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-100 dark:border-gray-700">
             <li>
-              {" "}
               <Link
                 href="/"
                 className={
@@ -109,6 +100,19 @@ export default function Navigation() {
                 }
               >
                 About{" "}
+              </Link>{" "}
+            </li>
+            <li>
+              {" "}
+              <Link
+                href="/tindasanaai"
+                className={
+                  pathname == "/tindasanaai"
+                    ? "underline text-purple-600 block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    : "block py-2 pl-3 pr-4 font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                }
+              >
+                AI Yoga Class (beta){" "}
               </Link>{" "}
             </li>
             <li>
@@ -137,15 +141,8 @@ export default function Navigation() {
                 Sessions{" "}
               </Link>{" "}
             </li>
-            {/* <li>
-          <a
-            href="#"
-            className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-          >
-            Services
-          </a>
-        </li> */}
             <li>
+              {" "}
               <Link
                 href="/contact"
                 className={
