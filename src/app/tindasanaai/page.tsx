@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Image from "next/image";
 import TindasanaAIHeader from "../components/TindasanaAIHeader";
 import Footer from "../components/Footer";
@@ -35,9 +35,14 @@ interface TindasaAIProps {
   };
   startAgain: () => void;
   isDone: boolean;
+  MAX_CALLS: number;
+  currentCount: number;
+  setCurrentCount: React.Dispatch<React.SetStateAction<number>>;
   setIsDone: React.Dispatch<React.SetStateAction<boolean>>;
   apiResponse: ApiResponse | null;
   setApiResponse: React.Dispatch<React.SetStateAction<ApiResponse | null>>;
+  isDataLoaded: boolean;
+  setIsDataLoaded: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function TindasaAI({
@@ -50,6 +55,11 @@ function TindasaAI({
   setIsDone,
   apiResponse,
   setApiResponse,
+  MAX_CALLS,
+  currentCount,
+  setCurrentCount,
+  isDataLoaded,
+  setIsDataLoaded,
 }: TindasaAIProps) {
   const imgWidthSize = 150;
   const imgHeightSize = 150;
@@ -91,7 +101,34 @@ function TindasaAI({
     );
   }
 
-  function StartOverButton() {
+  interface GenerationsLeftProps {
+    MAX_CALLS: TindasaAIProps["MAX_CALLS"];
+    currentCount: TindasaAIProps["currentCount"];
+    isDataLoaded: TindasaAIProps["isDataLoaded"];
+    setIsDataLoaded: TindasaAIProps["setIsDataLoaded"];
+  }
+
+  function GenerationsLeft({
+    MAX_CALLS,
+    currentCount,
+    isDataLoaded,
+    setIsDataLoaded,
+  }: GenerationsLeftProps) {
+    return (
+      <>
+        <div className="flex items-center justify-center p-1.5 text-xs font-bold bg-slate-100 text-gray-500 rounded-md">
+          Generations left: {isDataLoaded ? "..." : MAX_CALLS - currentCount}
+        </div>
+      </>
+    );
+  }
+
+  function StartOverButton({
+    MAX_CALLS,
+    currentCount,
+    isDataLoaded,
+    setIsDataLoaded,
+  }: GenerationsLeftProps) {
     return (
       <>
         <button
@@ -100,6 +137,14 @@ function TindasaAI({
         >
           Start Over
         </button>
+        <GenerationsLeft
+          MAX_CALLS={MAX_CALLS}
+          currentCount={currentCount}
+          isDataLoaded={false}
+          setIsDataLoaded={function (value: SetStateAction<boolean>): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
       </>
     );
   }
@@ -194,6 +239,16 @@ function TindasaAI({
             <button className={buttonNextStyle} onClick={proceedToNextStage}>
               Start
             </button>
+            <div className="p-2 mt-2 text-xs font-bold text-gray-500 rounded-md bg-slate-100">
+              Generations left:{" "}
+              {isDataLoaded ? MAX_CALLS - currentCount : "..."}
+              <br />
+            </div>
+            <span className="p-4 text-xs italic text-fuchsia-600">
+              {MAX_CALLS - currentCount === 0
+                ? "You can still click through the options, but will not be able to generate more today"
+                : null}
+            </span>
           </div>{" "}
           <br />
           <Footer />
@@ -203,6 +258,14 @@ function TindasaAI({
       return (
         <>
           <TindasanaAIHeader />
+          <GenerationsLeft
+            MAX_CALLS={MAX_CALLS}
+            currentCount={currentCount}
+            isDataLoaded={false}
+            setIsDataLoaded={function (value: SetStateAction<boolean>): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
           <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
             <span className="text-2xl font-bold text-gray-800 md:text-3xl">
               {" "}
@@ -298,6 +361,14 @@ function TindasaAI({
         <>
           <div>
             <TindasanaAIHeader />
+            <GenerationsLeft
+              MAX_CALLS={MAX_CALLS}
+              currentCount={currentCount}
+              isDataLoaded={false}
+              setIsDataLoaded={function (value: SetStateAction<boolean>): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
             <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
               <span className="text-2xl font-bold text-gray-800 md:text-3xl">
                 {" "}
@@ -389,6 +460,14 @@ function TindasaAI({
       return (
         <>
           <TindasanaAIHeader />
+          <GenerationsLeft
+            MAX_CALLS={MAX_CALLS}
+            currentCount={currentCount}
+            isDataLoaded={false}
+            setIsDataLoaded={function (value: SetStateAction<boolean>): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
           <div className="flex flex-col items-center justify-center mt-6 text-center md:mt-10">
             <span className="text-2xl font-bold text-gray-800 md:text-3xl">
               {" "}
@@ -488,7 +567,7 @@ function TindasaAI({
                       🔮 Your Sequence
                     </span>
                     <br />
-                    <div className="w-96 mb-8 overflow-auto font-sans text-base p-4 text-center text-gray-700 whitespace-pre-wrap border border-gray-300 h-96">
+                    <div className="p-4 mb-8 overflow-auto font-sans text-base text-center text-gray-700 whitespace-pre-wrap border border-gray-300 w-96 h-96">
                       {(apiResponse as any).choices[0].text}
                     </div>
                     <Script
@@ -500,13 +579,22 @@ function TindasaAI({
                     <div id="emojicom-widget-inline"></div>
                     <br />
                     <br />
-                    <StartOverButton />
+                    <StartOverButton
+                      MAX_CALLS={MAX_CALLS}
+                      currentCount={currentCount}
+                      isDataLoaded={isDataLoaded}
+                      setIsDataLoaded={function (
+                        value: SetStateAction<boolean>
+                      ): void {
+                        throw new Error("Function not implemented.");
+                      }}
+                    />
                   </div>{" "}
                 </>
               ) : (
                 <div
                   role="status"
-                  className="flex flex-col mt-12 mb-12 items-center text-center justify-center"
+                  className="flex flex-col items-center justify-center mt-12 mb-12 text-center"
                 >
                   <span className="text-xl font-bold text-gray-400">
                     🪄 Manifesting your unique yoga flow... <br />
@@ -531,7 +619,7 @@ function TindasaAI({
                       fill="currentFill"
                     />
                   </svg>
-                  <span className="sr-only">Loading...</span>
+                  <span className="sr-only">Limit reached.</span>
                 </div>
               )}
             </>
@@ -552,8 +640,60 @@ function TindasanaAIWrapper() {
   const [stage, setStage] = useState(0);
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
   const [isDone, setIsDone] = useState(false);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  const MAX_CALLS = 30;
+  const [currentCount, setCurrentCount] = useState<number>(0);
+
+  useEffect(() => {
+    const storedCount = getDataOrResetIfNewDay("apiCallCount") || 0;
+    setCurrentCount(storedCount);
+    setIsDataLoaded(true);
+  }, []);
+
+  // Get generations count with date
+
+  const setDataWithDate = (key: string, value: number) => {
+    const dataWithDate = {
+      value: value,
+      lastAccessedDate: new Date().toISOString().split("T")[0], // stores just the date
+    };
+    localStorage.setItem(key, JSON.stringify(dataWithDate));
+  };
+
+  const getDataOrResetIfNewDay = (key: string) => {
+    const dataStr = localStorage.getItem(key);
+    if (!dataStr) return null;
+
+    const dataObj = JSON.parse(dataStr);
+    const currentDate = new Date().toISOString().split("T")[0];
+
+    if (currentDate !== dataObj.lastAccessedDate) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return dataObj.value;
+  };
+
+  const canMakeApiCall = () => {
+    return currentCount < MAX_CALLS;
+  };
+
+  const incrementApiCallCount = () => {
+    const newCount = currentCount + 1;
+    setCurrentCount(newCount);
+    setDataWithDate("apiCallCount", newCount);
+  };
 
   const fetchAPI = async () => {
+    if (!canMakeApiCall()) {
+      alert(
+        "🧘‍♂️✨ Oh, dear yogi! You've flowed through all your sequences for today. 🌙 Take a deep breath, embrace the present moment, and return tomorrow for more enlightening journeys. 🌅 Namaste! 🙏 The universe will now refresh the app for you. 🌀"
+      );
+      setStage(0);
+      return;
+    }
+
     try {
       const response = await fetch("/api/myapi", {
         method: "POST",
@@ -567,6 +707,7 @@ function TindasanaAIWrapper() {
 
       const data = await response.json();
       setApiResponse(data);
+      incrementApiCallCount();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -638,6 +779,11 @@ function TindasanaAIWrapper() {
       setIsDone={setIsDone}
       apiResponse={apiResponse}
       setApiResponse={setApiResponse}
+      MAX_CALLS={MAX_CALLS}
+      currentCount={currentCount}
+      setCurrentCount={setCurrentCount}
+      isDataLoaded={isDataLoaded}
+      setIsDataLoaded={setIsDataLoaded}
     />
   );
 }
