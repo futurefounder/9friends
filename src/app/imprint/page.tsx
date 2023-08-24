@@ -16,10 +16,15 @@ export default function Imprint() {
               Notice
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              /9Friends <br />
-              Responsible for Content: Jesse Khala <br />
-              Address upon request <br />{" "}
-              <Link className="hover:text-purple-500" href="/contact">
+              <span className="font-bold">/9Friends</span> <br />
+              Responsible for Content:
+              <br />
+              Jesse Khala <br />
+              Scanbox #11417 <br />
+              Ehrenbergstr. 16a <br />
+              10245 Berlin
+              <br />{" "}
+              <Link className="underline hover:text-purple-500" href="/contact">
                 {" "}
                 Contact{" "}
               </Link>
@@ -64,6 +69,7 @@ export default function Imprint() {
                 {" "}
                 Pexels.
               </Link>{" "}
+              <br />
               The contents and works on these pages created by the site operator
               are subject to German copyright law. The duplication, processing,
               distribution, and any kind of utilization outside the limits of
