@@ -25,7 +25,7 @@ const Hero = (params: any) => {
               <span className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:animate-pulse md:text-5xl lg:text-6xl dark:text-white">
                 Yoga Experience{" "}
               </span>
-              <div className="z-0 flex justify-center">
+              {/* <div className="z-0 flex justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -40,7 +40,7 @@ const Hero = (params: any) => {
                     d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-              </div>
+              </div> */}
             </h2>
             <p className="text-gray-500 md:mt-4 md:block">
               Get ready for an energizing and joyful experience! <br />
@@ -49,7 +49,7 @@ const Hero = (params: any) => {
                 {" "}
                 🔥 1. & 3. wed. of the month -{" "}
                 <Link
-                  className="font-bold text-purple-500 underline"
+                  className="font-bold text-purple-500 underline hover:text-purple-700"
                   href="/posts/what-are-yoga-drills"
                 >
                   {" "}
@@ -98,7 +98,7 @@ const Hero = (params: any) => {
 
         <img
           alt="Student"
-          src="https://images.pexels.com/photos/8436719/pexels-photo-8436719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="https://images.pexels.com/photos/8436746/pexels-photo-8436746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           className="object-cover w-full h-56 rounded sm:h-full"
         />
       </div>

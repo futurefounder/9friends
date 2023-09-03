@@ -110,19 +110,23 @@ export default function FAQ() {
             (Google Link), a calm space located in Friedrichshain, Berlin.
           </Item>
           <Item title="How much do the classes cost?">
-            The classes are either donation based (5‎ - 15‎) or via ClassPass.{" "}
-            <br />
-            <br /> I am working on getting Urban Sports Club approved, this
-            might be available as of August 2023. <br />
-            <br />
+            The classes are either donation based on site (5‎ - 15‎) or via
+            ClassPass. <br />
             If you find yourself facing financial challenges but still wish to
             join, please reach out to me at hello@my9friends.com with a little
             note, and we will work together to find a solution that allows you
             to be part of our community. Your well-being matters!😊
           </Item>
           <Item title="How do I book a class?">
-            Classpass Members: Book via the Classpass App. <br /> Everyone else:
-            Book via the book now button on this website 😊{" "}
+            Classpass Members: Book via the{" "}
+            <Link
+              target="_blank"
+              href="https://classpass.com/studios/9friends-berlin"
+            >
+              <span className="font-semibold underline">Classpass App</span>{" "}
+            </Link>
+            <br /> Everyone else: Book via the book now button on this website
+            😊{" "}
           </Item>
           <Item title="My question is not answered, how can I contact you?">
             No problem 😊 just send a message through the{" "}
