@@ -64,17 +64,17 @@ export default function Testimonials() {
                 and fulfillment derived from our small group experiences.
               </p>
 
-              <div class="hidden lg:mt-8 lg:flex lg:gap-4 items-center">
-                <div class="mx-auto flex gap-4">
-                  <button class="p-3 text-purple-600 border border-purple-600 rounded-full prev-button hover:bg-purple-600 hover:text-white">
-                    <span class="sr-only">Previous Slide</span>
+              <div className="items-center hidden lg:mt-8 lg:flex lg:gap-4">
+                <div className="flex gap-4 mx-auto">
+                  <button className="p-3 text-purple-600 border border-purple-600 rounded-full prev-button hover:bg-purple-600 hover:text-white">
+                    <span className="sr-only">Previous Slide</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="w-5 h-5 rtl:rotate-180"
+                      className="w-5 h-5 rtl:rotate-180"
                     >
                       <path
                         stroke-linecap="round"
@@ -83,10 +83,10 @@ export default function Testimonials() {
                       ></path>
                     </svg>
                   </button>
-                  <button class="p-3 text-purple-600 border border-purple-600 rounded-full next-button hover:bg-purple-600 hover:text-white">
-                    <span class="sr-only">Next Slide</span>
+                  <button className="p-3 text-purple-600 border border-purple-600 rounded-full next-button hover:bg-purple-600 hover:text-white">
+                    <span className="sr-only">Next Slide</span>
                     <svg
-                      class="w-5 h-5 rtl:rotate-180"
+                      className="w-5 h-5 rtl:rotate-180"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -164,9 +164,9 @@ export default function Testimonials() {
                           </p>
 
                           <p className="mt-4 leading-relaxed text-gray-500">
-                            I've tried the Yoga Drills Class. Although I've done
-                            yoga for years, this type of class was new to me and
-                            really challenging.
+                            I&apos;ve tried the Yoga Drills Class. Although
+                            I&apos;ve done yoga for years, this type of class
+                            was new to me and really challenging.
                             <span className="font-bold">
                               <br /> Jesse is a professional teacher and uses an
                               innovative practice of training{" "}
