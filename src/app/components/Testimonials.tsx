@@ -64,48 +64,140 @@ export default function Testimonials() {
                 and fulfillment derived from our small group experiences.
               </p>
 
-              <div className="hidden lg:mt-8 lg:flex lg:gap-4">
-                <button className="p-3 text-purple-600 border border-purple-600 rounded-full prev-button hover:bg-purple-600 hover:text-white">
-                  <span className="sr-only">Previous Slide</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5 rtl:rotate-180"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </button>
-
-                <button className="p-3 text-purple-600 border border-purple-600 rounded-full next-button hover:bg-purple-600 hover:text-white">
-                  <span className="sr-only">Next Slide</span>
-                  <svg
-                    className="w-5 h-5 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 5l7 7-7 7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </button>
+              <div class="hidden lg:mt-8 lg:flex lg:gap-4 items-center">
+                <div class="mx-auto flex gap-4">
+                  <button class="p-3 text-purple-600 border border-purple-600 rounded-full prev-button hover:bg-purple-600 hover:text-white">
+                    <span class="sr-only">Previous Slide</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-5 h-5 rtl:rotate-180"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 19.5L8.25 12l7.5-7.5"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button class="p-3 text-purple-600 border border-purple-600 rounded-full next-button hover:bg-purple-600 hover:text-white">
+                    <span class="sr-only">Next Slide</span>
+                    <svg
+                      class="w-5 h-5 rtl:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 5l7 7-7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div className="-mx-6 lg:col-span-2 lg:mx-0">
               <div className="swiper-container !overflow-hidden">
                 <div className="swiper-wrapper ">
+                  {/* Testimonial  */}
+                  <div className="swiper-slide">
+                    <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
+                      <div>
+                        <div className="flex gap-0.5 text-green-500">
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+
+                          <svg
+                            className="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        </div>
+
+                        <div className="mt-4">
+                          <p className="text-2xl font-bold text-purple-600 sm:text-3xl">
+                            Challenging Class With A Professional Teacher!{" "}
+                          </p>
+
+                          <p className="mt-4 leading-relaxed text-gray-500">
+                            I've tried the Yoga Drills Class. Although I've done
+                            yoga for years, this type of class was new to me and
+                            really challenging.
+                            <span className="font-bold">
+                              <br /> Jesse is a professional teacher and uses an
+                              innovative practice of training{" "}
+                            </span>
+                            through drills. His positive vibes are really
+                            valuable too.{" "}
+                            <span className="font-bold">
+                              I recommend his yoga class!
+                            </span>{" "}
+                          </p>
+                        </div>
+                      </div>
+                      <br />
+                      <Image
+                        alt="marine"
+                        src="/images/marine.webp"
+                        width={80}
+                        height={80}
+                        className="object-cover w-16 h-16 rounded-full"
+                      />
+                      <footer className={nameStyle}>&mdash; Marine</footer>
+                      <div className="flex flex-col">
+                        <div>
+                          <span className="bg-indigo-100 text-indigo-700 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                            🪷 Advanced
+                          </span>
+                        </div>
+                      </div>
+                    </blockquote>{" "}
+                  </div>
+                  {/* Testimonial  */}
                   <div className="swiper-slide">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
@@ -192,7 +284,7 @@ export default function Testimonials() {
                       </div>
                     </blockquote>{" "}
                   </div>
-
+                  {/* Testimonial  */}
                   <div className="swiper-slide bg-slate-400">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white">
                       <div>
@@ -279,7 +371,7 @@ export default function Testimonials() {
                       </div>
                     </blockquote>
                   </div>
-
+                  {/* Testimonial  */}
                   <div className="swiper-slide">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
@@ -359,7 +451,7 @@ export default function Testimonials() {
                       </div>
                     </blockquote>
                   </div>
-
+                  {/* Testimonial  */}
                   <div className="swiper-slide">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
@@ -446,6 +538,7 @@ export default function Testimonials() {
                       </div>
                     </blockquote>
                   </div>
+                  {/* Testimonial  */}
                   <div className="swiper-slide">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
@@ -524,6 +617,7 @@ export default function Testimonials() {
                       </div>
                     </blockquote>
                   </div>
+                  {/* Testimonial  */}
                   <div className="swiper-slide">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white ">
                       <div>
@@ -604,7 +698,7 @@ export default function Testimonials() {
                       </div>
                     </blockquote>
                   </div>
-
+                  {/* Testimonial  */}
                   <div className="swiper-slide">
                     <blockquote className="flex flex-col justify-between h-full p-12 bg-white">
                       <div>
