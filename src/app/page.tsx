@@ -20,7 +20,7 @@ export default function Home() {
         <Hero />
         <Testimonials />
         {/* <BookingCards /> */}
-        {/* <StickyBanner /> */}
+        <StickyBanner />
         <Benefits />
         <FAQ />
         <Footer />
