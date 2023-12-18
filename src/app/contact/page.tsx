@@ -30,32 +30,7 @@ function Contact() {
   return (
     <div>
       <Navigation />
-      {showModal && ( // Render the modal if showModal is true
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="p-6 bg-white rounded-lg shadow-lg w-80">
-            {/* <p className="mb-4 text-4xl text-center">🎉 Thank you! </p> */}
-            <iframe
-              src="https://giphy.com/embed/m2WQBH7DhSdgLfnTUi"
-              width="280"
-              height="280"
-              frameBorder="0"
-              className="giphy-embed"
-              allowFullScreen
-            ></iframe>
-            <p></p>
-            <p className="mb-4 text-center text-l">
-              {" "}
-              <br />
-              I recieved your message 🙏🏾😊 <br /> I will get back yo you as soon
-              as possible! <br /> <br />- Jesse{" "}
-            </p>
-
-            <p className="font-bold text-center">
-              <Link href="/">↩️ Go back to the main site</Link>
-            </p>
-          </div>
-        </div>
-      )}
+      
       <section
         className={`min-h-screen bg-white dark:bg-gray-900 lg:flex ${
           showModal ? "blur" : ""
@@ -68,7 +43,7 @@ function Contact() {
 
           <p className="mt-4 text-gray-500 dark:text-gray-400">
             Any questions regarding 9Friends? <br />
-            <span className="text-gray-500 font-light text-base">
+            <span className="text-base font-light text-gray-500">
               {" "}
               (Marketing and any non-9Friends related topics will be ignored,
               thanks for your understanding).{" "}

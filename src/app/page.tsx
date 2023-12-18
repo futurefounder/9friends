@@ -19,7 +19,6 @@ export default function Home() {
         <Navigation />
         <Hero />
         <Testimonials />
-        {/* <BookingCards /> */}
         <StickyBanner />
         <Benefits />
         <FAQ />
